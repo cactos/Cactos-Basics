@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CACTOS Infrastructure Models UI
+Bundle-SymbolicName: eu.cactosfp7.infrastructuremodels.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: eu.cactosfp7.infrastructuremodels.ui.Activator
+Bundle-Vendor: CACTOS Consortium
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore,
+ tools.descartes.dlim.generator,
+ tools.descartes.dlim.generator.editor,
+ org.eclipse.ui.workbench
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: eu.cactosfp7.infrastructuremodels.ui

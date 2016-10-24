@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="logicaldc" nsURI="http://www.cactosfp7.eu/LogicalDCModel/1.0"
+    nsPrefix="logicaldc">
+  <eSubpackages name="hypervisor" nsURI="http://www.cactosfp7.eu/LogicalDCModel/Hypervisor/1.0"
+      nsPrefix="hypervisor">
+    <eClassifiers xsi:type="ecore:EClass" name="HypervisorRepository" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hypervisorTypes" ordered="false"
+          upperBound="-1" eType="#//hypervisor/HypervisorType" containment="true"
+          eOpposite="#//hypervisor/HypervisorType/hypervisorRepository"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HypervisorType" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hypervisorRepository"
+          ordered="false" eType="#//hypervisor/HypervisorRepository" eOpposite="#//hypervisor/HypervisorRepository/hypervisorTypes"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="application" nsURI="http://www.cactosfp7.eu/LogicalDCModel/Application/1.0"
+      nsPrefix="application">
+    <eClassifiers xsi:type="ecore:EClass" name="VMBehaviour" abstract="true" eSuperTypes="physicaldcmodel.ecore#//util/NamedElement ../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualMachine" ordered="false"
+          eType="#//core/VirtualMachine" eOpposite="#//core/VirtualMachine/runtimeApplicationModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="vmImageBehaviour" ordered="false"
+          lowerBound="1" eType="#//application/VMImageBehaviour"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ApplicationTemplate" abstract="true"
+        eSuperTypes="physicaldcmodel.ecore#//util/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logicalDCModel" ordered="false"
+          lowerBound="1" eType="#//core/LogicalDCModel" eOpposite="#//core/LogicalDCModel/applicationTemplates"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceInterface" eSuperTypes="physicaldcmodel.ecore#//util/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="serviceOperations" ordered="false"
+          lowerBound="1" upperBound="-1" eType="#//application/ServiceOperation" containment="true"
+          eOpposite="#//application/ServiceOperation/serviceInterface"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logicalDCModel" ordered="false"
+          lowerBound="1" eType="#//core/LogicalDCModel" eOpposite="#//core/LogicalDCModel/serviceInterfaces"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceOperation" eSuperTypes="physicaldcmodel.ecore#//util/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="serviceInterface" ordered="false"
+          lowerBound="1" eType="#//application/ServiceInterface" eOpposite="#//application/ServiceInterface/serviceOperations"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ApplicationInstance" abstract="true"
+        eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="applicationTemplate"
+          ordered="false" lowerBound="1" eType="#//application/ApplicationTemplate"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logicalDCModel" ordered="false"
+          lowerBound="1" eType="#//core/LogicalDCModel" eOpposite="#//core/LogicalDCModel/applicationInstances"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VMImageBehaviour" abstract="true"
+        eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="vmImage" ordered="false"
+          lowerBound="1" eType="#//core/VirtualDisk"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="defaultFlavour" ordered="false"
+          eType="#//core/Flavour"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BlackBoxVMBehaviour" eSuperTypes="#//application/VMBehaviour #//application/BlackBoxBehaviour"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BlackBoxBehaviour" abstract="true"
+        eSuperTypes="#//application/RepeatableBehaviour">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="blackBoxWorkloads" ordered="false"
+          lowerBound="1" upperBound="-1" eType="#//application/BlackBoxWorkload" containment="true"
+          eOpposite="#//application/BlackBoxWorkload/blackBoxBehaviour"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RepeatableBehaviour" abstract="true"
+        eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="patternIsRepeating" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BlackBoxWorkload" eSuperTypes="physicaldcmodel.ecore#//util/NamedElement ../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceDemandRates"
+          ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/tools.descartes.dlim.generator/src/tools/descartes/dlim/model/dlim.ecore#//Sequence"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="originReferenceTime"
+          ordered="false" upperBound="-1" eType="ecore:EDataType physicaldcmodel.ecore#//util/Time"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="onResource" ordered="false"
+          lowerBound="1" eType="ecore:EClass physicaldcmodel.ecore#//core/MonitorableResource"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceDemandUnit" ordered="false"
+          lowerBound="1" eType="ecore:EDataType physicaldcmodel.ecore#//util/Unit"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="blackBoxBehaviour" ordered="false"
+          lowerBound="1" eType="#//application/BlackBoxBehaviour" eOpposite="#//application/BlackBoxBehaviour/blackBoxWorkloads"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GreyBoxVMBehaviour" eSuperTypes="#//application/VMBehaviour #//application/GreyBoxBehaviour physicaldcmodel.ecore#//util/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="progress" ordered="false"
+          eType="#//application/Progress" containment="true" eOpposite="#//application/Progress/greyBoxVMBehaviour"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GreyBoxBehaviour" abstract="true"
+        eSuperTypes="#//application/RepeatableBehaviour">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="workloadPhases" lowerBound="1"
+          upperBound="-1" eType="#//application/WorkloadPhase" containment="true"
+          eOpposite="#//application/WorkloadPhase/greyBoxBehaviour"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WorkloadPhase" eSuperTypes="physicaldcmodel.ecore#//util/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceDemands" ordered="false"
+          upperBound="-1" eType="#//application/ResourceDemand" containment="true"
+          eOpposite="#//application/ResourceDemand/workloadPhase"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="greyBoxBehaviour" ordered="false"
+          lowerBound="1" eType="#//application/GreyBoxBehaviour" eOpposite="#//application/GreyBoxBehaviour/workloadPhases"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceDemand" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="amount" ordered="false"
+          lowerBound="1" eType="ecore:EDataType physicaldcmodel.ecore#//util/Amount"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="onResource" ordered="false"
+          lowerBound="1" eType="ecore:EClass physicaldcmodel.ecore#//core/MonitorableResource"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="workloadPhase" ordered="false"
+          lowerBound="1" eType="#//application/WorkloadPhase" eOpposite="#//application/WorkloadPhase/resourceDemands"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Progress" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eOperations name="oneProgressPerDemand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="self.resourceDemandProgress.resourceDemand->includesAll(self.currentPhase.resourceDemands) and self.currentPhase.resourceDemands->includesAll(self.resourceDemandProgress.resourceDemand)"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="currentPhase" ordered="false"
+          lowerBound="1" eType="#//application/WorkloadPhase"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceDemandProgress"
+          ordered="false" upperBound="-1" eType="#//application/ResourceDemandProgress"
+          containment="true" eOpposite="#//application/ResourceDemandProgress/progress"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="greyBoxVMBehaviour" ordered="false"
+          lowerBound="1" eType="#//application/GreyBoxVMBehaviour" eOpposite="#//application/GreyBoxVMBehaviour/progress"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceDemandProgress" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="amount" ordered="false"
+          lowerBound="1" eType="ecore:EDataType physicaldcmodel.ecore#//util/Amount"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceDemand" ordered="false"
+          lowerBound="1" eType="#//application/ResourceDemand"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="progress" ordered="false"
+          lowerBound="1" eType="#//application/Progress" eOpposite="#//application/Progress/resourceDemandProgress"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComposedVMImage" eSuperTypes="#//application/entity/InterfaceProvidingRequiringEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="applicationTemplate"
+          ordered="false" lowerBound="1" eType="#//application/WhiteBoxApplicationTemplate"
+          eOpposite="#//application/WhiteBoxApplicationTemplate/composedVMImages"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="vmImageBehaviour" ordered="false"
+          lowerBound="1" eType="#//application/WhiteBoxVMImageBehaviour" containment="true"
+          eOpposite="#//application/WhiteBoxVMImageBehaviour/composedVMImage"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumServableRequests"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WhiteBoxApplicationTemplate" eSuperTypes="#//application/ApplicationTemplate">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="vmImageConnectors" ordered="false"
+          upperBound="-1" eType="#//application/VMImageConnector" containment="true"
+          eOpposite="#//application/VMImageConnector/applicationTemplate"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="userFacingServices" ordered="false"
+          lowerBound="1" upperBound="-1" eType="#//application/ServiceProvidedRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="whiteBoxUserBehaviourTemplate"
+          ordered="false" upperBound="-1" eType="#//application/WhiteBoxUserBehaviourTemplate"
+          containment="true" eOpposite="#//application/WhiteBoxUserBehaviourTemplate/whiteBoxApplicationTemplate"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="composedVMImages" ordered="false"
+          upperBound="-1" eType="#//application/ComposedVMImage" containment="true"
+          eOpposite="#//application/ComposedVMImage/applicationTemplate"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VMImageConnector" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="serviceProvidedRole"
+          ordered="false" lowerBound="1" eType="#//application/ServiceProvidedRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="serviceRequiredRole"
+          ordered="false" lowerBound="1" eType="#//application/ServiceRequiredRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="applicationTemplate"
+          ordered="false" lowerBound="1" eType="#//application/WhiteBoxApplicationTemplate"
+          eOpposite="#//application/WhiteBoxApplicationTemplate/vmImageConnectors"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceProvidedRole" eSuperTypes="#//application/entity/ProvidedRole">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="serviceInterface" ordered="false"
+          lowerBound="1" eType="#//application/ServiceInterface"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceRequiredRole" eSuperTypes="#//application/entity/RequiredRole">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="serviceInterface" ordered="false"
+          lowerBound="1" eType="#//application/ServiceInterface"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WhiteBoxUserBehaviourTemplate" eSuperTypes="#//application/UsageScenario">
+      <eOperations name="AllServiceCallMustBeToUserFacingServices" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="userBehaviours.controlFlowActions->select(a| a.oclIsTypeOf(ServiceOperationCallAction))->collect(a|a.oclAsType(ServiceOperationCallAction)).serviceRequiredRole->forAll(r | self.whiteBoxApplicationTemplate.userFacingServices->exists(n|n=r))&#xD;&#xA;"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="whiteBoxApplicationTemplate"
+          ordered="false" eType="#//application/WhiteBoxApplicationTemplate" eOpposite="#//application/WhiteBoxApplicationTemplate/whiteBoxUserBehaviourTemplate"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UsageScenario" eSuperTypes="physicaldcmodel.ecore#//util/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="userBehaviours" ordered="false"
+          lowerBound="1" upperBound="-1" eType="#//application/UserBehaviour" containment="true"
+          eOpposite="#//application/UserBehaviour/usageScenario"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UserBehaviour" eSuperTypes="physicaldcmodel.ecore#//util/NamedElement">
+      <eOperations name="UserBehaviourMustNotHaveResourceDemandActions" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="controlFlowActions->select(a| a.oclIsTypeOf(ResourceDemandAction))->isEmpty()"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eOperations name="UserBehaviourMustNotHaveNonApplicationServiceCalls" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="controlFlowActions->select(a | a.oclIsKindOf(ServiceOperationCallAction))->isEmpty()"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="controlFlowActions" ordered="false"
+          upperBound="-1" eType="#//application/ControlFlowAction" containment="true"
+          eOpposite="#//application/ControlFlowAction/userBehaviour"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="arrivalRate" ordered="false"
+          lowerBound="1" eType="#//application/ArrivalRate" containment="true" eOpposite="#//application/ArrivalRate/userBehaviour"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="usageScenario" ordered="false"
+          lowerBound="1" eType="#//application/UsageScenario" eOpposite="#//application/UsageScenario/userBehaviours"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ControlFlowAction" abstract="true"
+        eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eOperations name="ControlFlowActionMustNotHaveItselfAsIncomingOrOutgoingActionTransition"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="predecessingControlFlowAction &lt;> self and successingControlFlowAction &lt;> self"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="successingControlFlowAction"
+          ordered="false" eType="#//application/ControlFlowAction" eOpposite="#//application/ControlFlowAction/predecessingControlFlowAction"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="predecessingControlFlowAction"
+          ordered="false" eType="#//application/ControlFlowAction" eOpposite="#//application/ControlFlowAction/successingControlFlowAction"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="serviceEffect" ordered="false"
+          eType="#//application/ServiceEffect" eOpposite="#//application/ServiceEffect/controlFlowActions"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="userBehaviour" ordered="false"
+          eType="#//application/UserBehaviour" eOpposite="#//application/UserBehaviour/controlFlowActions"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceEffect" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eOperations name="ServiceEffectMustHaveExactlyOneStartAction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="self.controlFlowActions->select(s|s.oclIsTypeOf(StopAction))->size() = 1"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eOperations name="ServiceEffectMustHaveExactlyOneStopAction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="self.controlFlowActions->select(s|s.oclIsTypeOf(StopAction))->size() = 1"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eOperations name="ServiceEffectMustNotHaveApplicationCalls" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="controlFlowActions->select(a | a.oclIsKindOf(ApplicationCallAction))->size() = 0"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="forServiceOperation"
+          ordered="false" lowerBound="1" eType="#//application/ServiceOperation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="whiteBoxBehaviour" ordered="false"
+          lowerBound="1" eType="#//application/WhiteBoxBehaviour" eOpposite="#//application/WhiteBoxBehaviour/serviceEffects"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="forServiceProvidedRole"
+          ordered="false" lowerBound="1" eType="#//application/ServiceProvidedRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="controlFlowActions" ordered="false"
+          upperBound="-1" eType="#//application/ControlFlowAction" containment="true"
+          eOpposite="#//application/ControlFlowAction/serviceEffect"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WhiteBoxBehaviour" abstract="true"
+        eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="serviceEffects" ordered="false"
+          lowerBound="1" upperBound="-1" eType="#//application/ServiceEffect" containment="true"
+          eOpposite="#//application/ServiceEffect/whiteBoxBehaviour"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ArrivalRate" abstract="true" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="userBehaviour" ordered="false"
+          lowerBound="1" eType="#//application/UserBehaviour" eOpposite="#//application/UserBehaviour/arrivalRate"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WhiteBoxVMImageBehaviour" eSuperTypes="#//application/VMImageBehaviour #//application/WhiteBoxBehaviour">
+      <eOperations name="VMImageBehaviourServiceEffectsMayOnlyContainServiceOperationCallActionsUsingRequiredServiceRolesOfTheComposedVMImage"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="self.serviceEffects.controlFlowActions->select(cfa | cfa.oclIsTypeOf(application::ServiceOperationCallAction)).oclAsType(application::ServiceOperationCallAction)->forAll(a | self.composedVMImage.requiredRoles->exists(r | r.id = a.serviceRequiredRole.id))&#xD;&#xA;"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eOperations name="WhiteBoxVMImageBehaviourMustHaveDefaultFlavourReference"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="not defaultFlavour.oclIsUndefined()"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="referenceResourceSpecifications"
+          ordered="false" upperBound="-1" eType="ecore:EClass physicaldcmodel.ecore#//core/MonitorableResource"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="composedVMImage" ordered="false"
+          lowerBound="1" eType="#//application/ComposedVMImage" eOpposite="#//application/ComposedVMImage/vmImageBehaviour"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ScalableVMImageConnector" eSuperTypes="#//application/VMImageConnector">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="loadBalancingPolicy"
+          ordered="false" lowerBound="1" eType="#//application/LoadBalancingPolicy"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoScalingAnalysisInterval"
+          ordered="false" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Duration"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="minInstances" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="1"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultInstances" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="1"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxInstances" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="LoadBalancingPolicy">
+      <eLiterals name="RoundRobin"/>
+      <eLiterals name="HashBased" value="1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComposedVM" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualMachine" ordered="false"
+          lowerBound="1" eType="#//core/VirtualMachine"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="composedVMImage" ordered="false"
+          lowerBound="1" eType="#//application/ComposedVMImage"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="applicationInstance"
+          ordered="false" lowerBound="1" eType="#//application/WhiteBoxApplicationInstance"
+          eOpposite="#//application/WhiteBoxApplicationInstance/composedVMs"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WhiteBoxApplicationInstance" eSuperTypes="#//application/ApplicationInstance">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="whiteBoxUserBehaviourInstance"
+          ordered="false" upperBound="-1" eType="#//application/WhiteBoxUserBehaviourInstance"
+          containment="true" eOpposite="#//application/WhiteBoxUserBehaviourInstance/whiteBoxApplicationInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="composedVMs" ordered="false"
+          upperBound="-1" eType="#//application/ComposedVM" containment="true" eOpposite="#//application/ComposedVM/applicationInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WhiteBoxUserBehaviourInstance" eSuperTypes="#//application/UsageScenario">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="whiteBoxApplicationInstance"
+          ordered="false" lowerBound="1" eType="#//application/WhiteBoxApplicationInstance"
+          eOpposite="#//application/WhiteBoxApplicationInstance/whiteBoxUserBehaviourInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StartAction" eSuperTypes="#//application/ControlFlowAction">
+      <eOperations name="StartActionMustNotHaveIncomingActionTransition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="self.predecessingControlFlowAction.oclIsUndefined()&#xD;&#xA;"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eOperations name="StartActionMustHaveOutgoingActionTransition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="not successingControlFlowAction.oclIsUndefined()"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StopAction" eSuperTypes="#//application/ControlFlowAction">
+      <eOperations name="StopActionMustHaveIncomingActionTransition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="not predecessingControlFlowAction.oclIsUndefined()"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eOperations name="StopActionMustNotHaveOutgoingActionTransition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="successingControlFlowAction.oclIsUndefined()"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServiceOperationCallAction" eSuperTypes="#//application/InternalControlFlowAction">
+      <eOperations name="ServiceOperationMustBePartOfTheInterfaceStatedForTheRequiredRole"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="serviceRequiredRole.serviceInterface.serviceOperations->select(s|s=serviceOperationOfRequiredRole)->size() = 1"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="serviceRequiredRole"
+          ordered="false" lowerBound="1" eType="#//application/ServiceRequiredRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="serviceOperationOfRequiredRole"
+          ordered="false" lowerBound="1" eType="#//application/ServiceOperation"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InternalControlFlowAction" abstract="true"
+        eSuperTypes="#//application/ControlFlowAction">
+      <eOperations name="InternalControlFlowActionMustHaveIncomingAndOutgoingActionTransitions"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="not predecessingControlFlowAction.oclIsUndefined() and not successingControlFlowAction.oclIsUndefined()"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eOperations name="InternalControlFlowActionMustNotHaveTheSameIncomingAndOutgoingActionTransitions"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="predecessingControlFlowAction &lt;> successingControlFlowAction"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceDemandAction" eSuperTypes="#//application/InternalControlFlowAction">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceDemands" ordered="false"
+          upperBound="-1" eType="#//application/VariableResourceDemand" containment="true"
+          eOpposite="#//application/VariableResourceDemand/resourceDemandAction"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VariableResourceDemand" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="amount" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="&lt;p>Amount of unit requested from the resource. It can be straight or mathematical statements. Examples are &quot;200&quot;, &quot;DoublePDF[(1.0;0.3)(1.5;0.2)(2.0;0.5)]&quot;, or &quot;DATA.BYTESIZE * 200&quot;.&lt;/p>"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" ordered="false"
+          lowerBound="1" eType="ecore:EDataType physicaldcmodel.ecore#//util/Unit">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="&lt;p>Unit for the request. Examples are &quot;B&quot; for Bytes, &quot;GB&quot; for Gigabytes, or Dimensionsless.&lt;/p>"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="onResource" ordered="false"
+          lowerBound="1" eType="ecore:EClass physicaldcmodel.ecore#//core/MonitorableResource"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceDemandAction"
+          ordered="false" lowerBound="1" eType="#//application/ResourceDemandAction"
+          eOpposite="#//application/ResourceDemandAction/resourceDemands"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetVariableAction" eSuperTypes="#//application/InternalControlFlowAction">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variableAssignments"
+          ordered="false" lowerBound="1" upperBound="-1" eType="#//application/VariableAssignment"
+          containment="true" eOpposite="#//application/VariableAssignment/setVariableAction"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VariableAssignment" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" ordered="false"
+          lowerBound="1" eType="#//application/ControlFlowVariable"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="setVariableAction" ordered="false"
+          lowerBound="1" eType="#//application/SetVariableAction" eOpposite="#//application/SetVariableAction/variableAssignments"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ControlFlowVariable">
+      <eLiterals name="REQUESTVALUE">
+        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details key="originalName" value="REQUEST.VALUE"/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="REQUESTBYTESIZE" value="1">
+        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details key="originalName" value="REQUEST.BYTESIZE"/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="REQUESTHASH" value="2">
+        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details key="originalName" value="REQUEST.HASH"/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="RESPONSEVALUE" value="3">
+        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details key="originalName" value="RESPONSE.VALUE"/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="RESPONSEBYTESIZE" value="4">
+        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details key="originalName" value="RESPONSE.BYTESIZE"/>
+        </eAnnotations>
+      </eLiterals>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WhiteBoxVMBehaviour" eSuperTypes="#//application/VMBehaviour #//application/WhiteBoxBehaviour">
+      <eOperations name="VMImageBehaviourServiceEffectsMayOnlyContainServiceOperationCallActionsUsingRequiredServiceRolesOfTheComposedVMImage"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="self.serviceEffects.controlFlowActions->select(cfa | cfa.oclIsTypeOf(application::ServiceOperationCallAction)).oclAsType(application::ServiceOperationCallAction)->forAll(a : ServiceOperationCallAction | self.virtualMachine.hypervisor.logicalDCModel.applicationInstances.oclAsType(WhiteBoxApplicationInstance).composedVMs->any(virtualMachine.id = self.virtualMachine.id).composedVMImage.requiredRoles->exists(r | r.id = a.serviceRequiredRole.id))&#xD;&#xA;"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GreyBoxVMImageBehaviour" eSuperTypes="#//application/GreyBoxBehaviour #//application/VMImageBehaviour">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="referenceResourceSpecifications"
+          ordered="false" upperBound="-1" eType="ecore:EClass physicaldcmodel.ecore#//core/MonitorableResource"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="greyBoxApplicationTemplate"
+          ordered="false" eType="#//application/GreyBoxApplicationTemplate" eOpposite="#//application/GreyBoxApplicationTemplate/greyBoxVMImageBehaviour"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GreyBoxApplicationTemplate" eSuperTypes="#//application/ApplicationTemplate">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="greyBoxVMImageBehaviour"
+          ordered="false" lowerBound="1" eType="#//application/GreyBoxVMImageBehaviour"
+          containment="true" eOpposite="#//application/GreyBoxVMImageBehaviour/greyBoxApplicationTemplate"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BlackBoxApplicationTemplate" eSuperTypes="#//application/ApplicationTemplate">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="blackBoxVMImageBehaviour"
+          ordered="false" lowerBound="1" eType="#//application/BlackBoxVMImageBehaviour"
+          containment="true" eOpposite="#//application/BlackBoxVMImageBehaviour/blackBoxApplicationTemplate"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BlackBoxVMImageBehaviour" eSuperTypes="#//application/BlackBoxBehaviour #//application/VMImageBehaviour">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="referenceResourceSpecifications"
+          ordered="false" upperBound="-1" eType="ecore:EClass physicaldcmodel.ecore#//core/MonitorableResource"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="blackBoxApplicationTemplate"
+          ordered="false" eType="#//application/BlackBoxApplicationTemplate" eOpposite="#//application/BlackBoxApplicationTemplate/blackBoxVMImageBehaviour"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GreyBoxApplicationInstance" eSuperTypes="#//application/ApplicationInstance">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualMachine" ordered="false"
+          eType="#//core/VirtualMachine"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BlackBoxApplicationInstance" eSuperTypes="#//application/ApplicationInstance">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualMachine" ordered="false"
+          eType="#//core/VirtualMachine"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ClosedWorkload" eSuperTypes="#//application/ArrivalRate">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="userPopulation" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="1"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="thinkTime" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" ordered="false"
+          lowerBound="1" eType="ecore:EDataType physicaldcmodel.ecore#//util/Unit"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OpenWorkload" abstract="true" eSuperTypes="#//application/ArrivalRate"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ConstantOpenWorkload" eSuperTypes="#//application/OpenWorkload">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interarrivalTime" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" ordered="false"
+          lowerBound="1" eType="ecore:EDataType physicaldcmodel.ecore#//util/Unit"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VariableOpenWorkload" eSuperTypes="#//application/OpenWorkload">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="arrivalRate" ordered="false"
+          lowerBound="1" eType="ecore:EClass platform:/plugin/tools.descartes.dlim.generator/src/tools/descartes/dlim/model/dlim.ecore#//Sequence"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="arrivalRateUnit" ordered="false"
+          lowerBound="1" eType="ecore:EDataType physicaldcmodel.ecore#//util/Unit"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="samplingInterval" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Duration"/>
+        </eGenericType>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ApplicationCallAction" eSuperTypes="#//application/InternalControlFlowAction">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="serviceOperationOfProvidedRole"
+          ordered="false" lowerBound="1" eType="#//application/ServiceOperation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="serviceProvidedRole"
+          ordered="false" lowerBound="1" eType="#//application/ServiceProvidedRole"/>
+    </eClassifiers>
+    <eSubpackages name="entity" nsURI="http://www.cactosfp7.eu/LogicalDCModel/Application/Entity/1.0"
+        nsPrefix="entity">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This  set of abstract meta-classes gives a conceptual view on interfaces, entities and their relationships: Two roles can be identified a software entity can take relative to an interface. Any entity can claim to implement the functionality specified in an interface as well as to request that functionality. &#xD;&#xA;&#xD;&#xA;Base of the inheritance hierarchy are Identifier and NamedElement, both of which Entity and all inheriting classes are derived from. &#xD;&#xA;&#xD;&#xA;The relationship of Entities and Interfaces is described with the three meta classes InterfaceProvidingEntity, InterfaceRequiringEntity, and InterfaceProvidingRequiringEntity. The abstract meta-class InterfaceProvidingEntity is inherited by all entities which can potentially offer interface implementations. Similarly, the meta-class InterfaceRequiringEntity is inherited by all entities which are allowed to request functionality offer by entities providing this functionality. InterfaceProvidingRequiringEntity inherits from both of them and thus combines their properties. "/>
+      </eAnnotations>
+      <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true" eSuperTypes="physicaldcmodel.ecore#//util/NamedElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Entity is a meta class high up the PCM meta class hierarchy and represents all entities of the PCM that have both an id (see meta class Identifier) and a name (see meta class NamedEntity)."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="InterfaceProvidingEntity" abstract="true"
+          eSuperTypes="#//application/entity/Entity">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="All Entities that provide an Interface are represented by this class. Prominent inheriting classes are all component types, for example.&#xD;&#xA;&#xD;&#xA;Two roles can be identified a software entity can take relative to an interface. Any entity can claim to implement the functionality specified in an interface as well as to request that functionality. This is reflected in the Palladio Component Model by a set of abstract meta-classes giving a conceptual view on interfaces, entities and their relationships. The abstract meta-class InterfaceProvidingEntity is inherited by all entities which can potentially offer interface implementations. Similarly, the meta-class InterfaceRequiringEntity is inherited by all entities which are allowed to request functionality offered by entities providing this functionality.&#xD;&#xA;&#xD;&#xA;See also:&#xD;&#xA;Interface, ProvidedRole"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="providedRoles" ordered="false"
+            upperBound="-1" eType="#//application/entity/ProvidedRole" containment="true"
+            eOpposite="#//application/entity/ProvidedRole/interfaceProvidingEntity"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ProvidedRole" abstract="true" eSuperTypes="#//application/entity/Role">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Provided roles list the interfaces offered by a component."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceProvidingEntity"
+            ordered="false" lowerBound="1" eType="#//application/entity/InterfaceProvidingEntity"
+            eOpposite="#//application/entity/InterfaceProvidingEntity/providedRoles"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Role" abstract="true" eSuperTypes="#//application/entity/Entity">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This entity represents an abstraction of an interface role. "/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="InterfaceRequiringEntity" abstract="true"
+          eSuperTypes="#//application/entity/Entity">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="All Entities that require an Interface are represented by this class. Prominent inheriting classes are all component types, for example.&#xD;&#xA;&#xD;&#xA;Two roles can be identified a software entity can take relative to an interface. Any entity can claim to implement the functionality specified in an interface as well as to request that functionality. This is reflected in the Palladio Component Model by a set of abstract meta-classes giving a conceptual view on interfaces, entities and their relationships. The abstract meta-class InterfaceRequiringEntity is inherited by all entities which are allowed to request functionality offered by entities providing this functionality. Similarly, the meta-classInterfaceProvidingEntity  is inherited by all entities which can potentially offer interface implementations.&#xD;&#xA;&#xD;&#xA;See also:&#xD;&#xA;Interface, RequiredRole"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRoles" ordered="false"
+            upperBound="-1" eType="#//application/entity/RequiredRole" containment="true"
+            eOpposite="#//application/entity/RequiredRole/interfaceRequiringEntity"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="RequiredRole" abstract="true" eSuperTypes="#//application/entity/Role">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Required roles list the interfaces required by a component."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceRequiringEntity"
+            ordered="false" lowerBound="1" eType="#//application/entity/InterfaceRequiringEntity"
+            eOpposite="#//application/entity/InterfaceRequiringEntity/requiredRoles"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="InterfaceProvidingRequiringEntity"
+          abstract="true" eSuperTypes="#//application/entity/InterfaceProvidingEntity #//application/entity/InterfaceRequiringEntity">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This meta-class is inherited by classes that both require and provide an Interface. It thus combines the properties of InterfaceProvidingEntity and InterfaceRequiringEntity. Prominent inheriting classes are all component types, for example.&#xD;&#xA;&#xD;&#xA;See also:&#xD;&#xA;Interface, ProvidedRole, RequiredRole, InterfaceProvidingEntity, InterfaceRequiringEntity"/>
+        </eAnnotations>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="core" nsURI="http://www.cactosfp7.eu/LogicalDCModel/Core/1.0"
+      nsPrefix="core">
+    <eClassifiers xsi:type="ecore:EClass" name="VirtualMachine" eSuperTypes="#//core/ConnectedVirtualEntity #//core/VirtualMemoryConsumingEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logicalDCModel" ordered="false"
+          eType="#//core/LogicalDCModel" eOpposite="#//core/LogicalDCModel/unassignedVms"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="puAffinity" ordered="false"
+          eType="#//core/PuAffinity" containment="true" eOpposite="#//core/PuAffinity/virtualMachine"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hypervisor" ordered="false"
+          eType="#//core/Hypervisor" eOpposite="#//core/Hypervisor/virtualMachines"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="vMImageInstance" ordered="false"
+          lowerBound="1" eType="#//core/VMImageInstance" containment="true" eOpposite="#//core/VMImageInstance/virtualMachine"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" ordered="false"
+          lowerBound="1" eType="#//core/VM_State"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="inputParameters" ordered="false"
+          upperBound="-1" eType="ecore:EClass physicaldcmodel.ecore#//util/EStringToEStringObjectMapEntry"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="instantiationProperties"
+          ordered="false" upperBound="-1" eType="ecore:EClass physicaldcmodel.ecore#//util/EStringToEStringObjectMapEntry"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualProcessingUnits"
+          ordered="false" lowerBound="1" upperBound="-1" eType="#//core/VirtualProcessingUnit"
+          containment="true" eOpposite="#//core/VirtualProcessingUnit/virtualMachine"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeApplicationModel"
+          ordered="false" eType="#//application/VMBehaviour" containment="true" eOpposite="#//application/VMBehaviour/virtualMachine"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConnectedVirtualEntity" abstract="true"
+        eSuperTypes="physicaldcmodel.ecore#//util/NamedElement ../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualNetworkInterconnects"
+          ordered="false" upperBound="-1" eType="#//core/VirtualNetworkInterconnect"
+          eOpposite="#//core/VirtualNetworkInterconnect/connectedVirtualEntity"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VirtualNetworkInterconnect" eSuperTypes="physicaldcmodel.ecore#//util/NamedElement ../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier physicaldcmodel.ecore#//core/MonitorableResource">
+      <eOperations name="IsUniquelyConnected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="self->isUnique(s : VirtualNetworkInterconnect | s.connectedVirtualEntity)"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logicalDCModel" ordered="false"
+          eType="#//core/LogicalDCModel" eOpposite="#//core/LogicalDCModel/virtualNetworkInterconnects"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectedVirtualEntity"
+          ordered="false" lowerBound="2" upperBound="-1" eType="#//core/ConnectedVirtualEntity"
+          eOpposite="#//core/ConnectedVirtualEntity/virtualNetworkInterconnects"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LogicalDCModel" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hypervisors" ordered="false"
+          upperBound="-1" eType="#//core/Hypervisor" containment="true" eOpposite="#//core/Hypervisor/logicalDCModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualNetworks" ordered="false"
+          upperBound="-1" eType="#//core/VirtualNetwork" containment="true" eOpposite="#//core/VirtualNetwork/logicalDCModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="volumesAndImages" ordered="false"
+          upperBound="-1" eType="#//core/VirtualDisk" containment="true" eOpposite="#//core/VirtualDisk/logicalDCModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="unassignedVms" ordered="false"
+          upperBound="-1" eType="#//core/VirtualMachine" containment="true" eOpposite="#//core/VirtualMachine/logicalDCModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="applicationTemplates"
+          ordered="false" upperBound="-1" eType="#//application/ApplicationTemplate"
+          containment="true" eOpposite="#//application/ApplicationTemplate/logicalDCModel"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cyclicOptimizationInterval"
+          ordered="false" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Duration"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="serviceInterfaces" ordered="false"
+          upperBound="-1" eType="#//application/ServiceInterface" containment="true"
+          eOpposite="#//application/ServiceInterface/logicalDCModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="applicationInstances"
+          ordered="false" upperBound="-1" eType="#//application/ApplicationInstance"
+          containment="true" eOpposite="#//application/ApplicationInstance/logicalDCModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="flavours" ordered="false"
+          upperBound="-1" eType="#//core/Flavour" containment="true" eOpposite="#//core/Flavour/logicalDCModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualNetworkInterconnects"
+          ordered="false" upperBound="-1" eType="#//core/VirtualNetworkInterconnect"
+          containment="true" eOpposite="#//core/VirtualNetworkInterconnect/logicalDCModel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VirtualNetwork" eSuperTypes="#//core/ConnectedVirtualEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logicalDCModel" ordered="false"
+          eType="#//core/LogicalDCModel" eOpposite="#//core/LogicalDCModel/virtualNetworks"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VirtualDisk" eSuperTypes="physicaldcmodel.ecore#//util/NamedElement ../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eOperations name="VirtualDiskMustHaveACapacityIfItHasNoParent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="not parent.oclIsUndefined() implies capacity->size() > 0"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="capacity" ordered="false">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/DataAmount"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="storageLocation" ordered="false"
+          lowerBound="1" eType="ecore:EClass physicaldcmodel.ecore#//core/StorageSpecification"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="usedCapacity" ordered="false">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/DataAmount"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="deltaOverlay" ordered="false"
+          upperBound="-1" eType="#//core/VirtualDisk" containment="true" eOpposite="#//core/VirtualDisk/parent"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" ordered="false"
+          eType="#//core/VirtualDisk" eOpposite="#//core/VirtualDisk/deltaOverlay"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logicalDCModel" ordered="false"
+          eType="#//core/LogicalDCModel" eOpposite="#//core/LogicalDCModel/volumesAndImages"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Flavour" eSuperTypes="physicaldcmodel.ecore#//util/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="flavourRefVMI" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberVirtualCores" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="1"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sizeRam" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/DataAmount"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sizeStorage" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/DataAmount"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="architectureType" ordered="false"
+          lowerBound="1" eType="ecore:EClass physicaldcmodel.ecore#//architecturetype/ArchitectureType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logicalDCModel" ordered="false"
+          lowerBound="1" eType="#//core/LogicalDCModel" eOpposite="#//core/LogicalDCModel/flavours"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VirtualMemoryConsumingEntity" abstract="true"
+        eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualMemoryUnits" ordered="false"
+          upperBound="-1" eType="#//core/VirtualMemory" containment="true" eOpposite="#//core/VirtualMemory/virtualMemoryConsumingEntity"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VirtualMemory" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier physicaldcmodel.ecore#//core/MonitorableResource">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="provisioned" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/DataAmount"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualMemoryConsumingEntity"
+          ordered="false" lowerBound="1" eType="#//core/VirtualMemoryConsumingEntity"
+          eOpposite="#//core/VirtualMemoryConsumingEntity/virtualMemoryUnits"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PuAffinity" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="affinePus" ordered="false"
+          lowerBound="1" upperBound="-1" eType="ecore:EClass physicaldcmodel.ecore#//core/ProcessingUnitSpecification"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualMachine" ordered="false"
+          eType="#//core/VirtualMachine" eOpposite="#//core/VirtualMachine/puAffinity"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VMImageInstance" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rootDisk" ordered="false"
+          lowerBound="1" eType="#//core/VirtualDisk"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sharedDisks" ordered="false"
+          upperBound="-1" eType="#//core/VirtualDisk"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="vmSpecificDisks" ordered="false"
+          upperBound="-1" eType="#//core/VirtualDisk"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualMachine" ordered="false"
+          lowerBound="1" eType="#//core/VirtualMachine" eOpposite="#//core/VirtualMachine/vMImageInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="VM_State">
+      <eLiterals name="NEW">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="&lt;p>VM has been created logically but is not fully parameterized yet. Consequently, it cannot be deployed yet.&lt;/p>"/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="UNASSIGNED" value="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="&lt;p>The VM is ready to be deployed.&lt;/p>"/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="PLACED" value="2">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="&lt;p>A placement decision has been made for the VM: It is in the process of being placed on a host.&lt;/p>"/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="RUNNING" value="3">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="&lt;p>The VM is running.&lt;/p>"/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="PAUSED" value="4">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="&lt;p>The VM is not scheduled for CPU, but still occupies memory on the local host.&lt;/p>"/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="SHUTDOWN" value="5">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="&lt;p>VM is not scheduled for CPU and does not occupy memory.&lt;/p>"/>
+        </eAnnotations>
+      </eLiterals>
+      <eLiterals name="IN_OPTIMISATION" value="6">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="&lt;p>CACTOS is performing some optimisation operation on the vm such as scale up or migrate; this might cause the experience of a downtime.&lt;/p>"/>
+        </eAnnotations>
+      </eLiterals>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VirtualProcessingUnit" eSuperTypes="physicaldcmodel.ecore#//util/NamedElement physicaldcmodel.ecore#//core/MonitorableResource">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="virtualCores" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="architectureType" ordered="false"
+          lowerBound="1" eType="ecore:EClass physicaldcmodel.ecore#//architecturetype/ArchitectureType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualMachine" ordered="false"
+          lowerBound="1" eType="#//core/VirtualMachine" eOpposite="#//core/VirtualMachine/virtualProcessingUnits"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AssignedTransferRate" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VMImage" eSuperTypes="#//core/VirtualDisk">
+      <eOperations name="VMImageMustHaveAUsedCapacity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="usedCapacity->size() > 0"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="additionalSharedDisks"
+          ordered="false" upperBound="-1" eType="#//core/VirtualDisk"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="additionalVmSpecificDisks"
+          ordered="false" upperBound="-1" eType="#//core/VirtualDisk"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="startupTimes" ordered="false"
+          upperBound="-1" eType="#//core/StartupTime" containment="true" eOpposite="#//core/StartupTime/vmImage"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StartupTime">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="onNode" ordered="false"
+          eType="ecore:EClass physicaldcmodel.ecore#//core/ComputeNode"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="durationUnit" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Unit">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Duration"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hypervisor" ordered="false"
+          eType="#//core/Hypervisor" eOpposite="#//core/Hypervisor/startupTimes"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="&lt;p>Stochastic Expression (StoEx) stating the startup time. Can be a distribution.&lt;/p>"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="vmImage" ordered="false"
+          eType="#//core/VMImage" eOpposite="#//core/VMImage/startupTimes"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Hypervisor" eSuperTypes="#//core/VirtualMemoryConsumingEntity ../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logicalDCModel" ordered="false"
+          eType="#//core/LogicalDCModel" eOpposite="#//core/LogicalDCModel/hypervisors"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualMachines" ordered="false"
+          upperBound="-1" eType="#//core/VirtualMachine" containment="true" eOpposite="#//core/VirtualMachine/hypervisor"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="startupTimes" ordered="false"
+          upperBound="-1" eType="#//core/StartupTime" containment="true" eOpposite="#//core/StartupTime/hypervisor"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hypervisorType" ordered="false"
+          lowerBound="1" eType="#//hypervisor/HypervisorType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rootVolume" ordered="false"
+          lowerBound="1" eType="#//core/VirtualDisk"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="node" ordered="false"
+          lowerBound="1" eType="ecore:EClass physicaldcmodel.ecore#//core/ComputeNode"
+          eOpposite="physicaldcmodel.ecore#//core/ComputeNode/hypervisor"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

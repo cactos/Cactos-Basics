@@ -1,0 +1,1002 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
+    copyrightText="Eclipse Public License -v 1.0&#xD;&#xA;&#xD;&#xA;THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICENSE (&quot;AGREEMENT&quot;). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.&#xD;&#xA;&#xD;&#xA;1. DEFINITIONS&#xD;&#xA;&#xD;&#xA;&quot;Contribution&quot; means:&#xD;&#xA;&#xD;&#xA;a) in the case of the initial Contributor, the initial code and documentation distributed under this Agreement, and&#xD;&#xA;&#xD;&#xA;b) in the case of each subsequent Contributor:&#xD;&#xA;&#xD;&#xA;i) changes to the Program, and&#xD;&#xA;&#xD;&#xA;ii) additions to the Program;&#xD;&#xA;&#xD;&#xA;where such changes and/or additions to the Program originate from and are distributed by that particular Contributor. A Contribution 'originates' from a Contributor if it was added to the Program by such Contributor itself or anyone acting on such Contributor's behalf. Contributions do not include additions to the Program which: (i) are separate modules of software distributed in conjunction with the Program under their own license agreement, and (ii) are not derivative works of the Program.&#xD;&#xA;&#xD;&#xA;&quot;Contributor&quot; means any person or entity that distributes the Program.&#xD;&#xA;&#xD;&#xA;&quot;Licensed Patents &quot; mean patent claims licensable by a Contributor which are necessarily infringed by the use or sale of its Contribution alone or when combined with the Program.&#xD;&#xA;&#xD;&#xA;&quot;Program&quot; means the Contributions distributed in accordance with this Agreement.&#xD;&#xA;&#xD;&#xA;&quot;Recipient&quot; means anyone who receives the Program under this Agreement, including all Contributors.&#xD;&#xA;&#xD;&#xA;2. GRANT OF RIGHTS&#xD;&#xA;&#xD;&#xA;a) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, distribute and sublicense the Contribution of such Contributor, if any, and such derivative works, in source code and object code form.&#xD;&#xA;&#xD;&#xA;b) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free patent license under Licensed Patents to make, use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in source code and object code form. This patent license shall apply to the combination of the Contribution and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be covered by the Licensed Patents. The patent license shall not apply to any other combinations which include the Contribution. No hardware per se is licensed hereunder.&#xD;&#xA;&#xD;&#xA;c) Recipient understands that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that the Program does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to Recipient for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, each Recipient hereby assumes sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow Recipient to distribute the Program, it is Recipient's responsibility to acquire that license before distributing the Program.&#xD;&#xA;&#xD;&#xA;d) Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the copyright license set forth in this Agreement.&#xD;&#xA;&#xD;&#xA;3. REQUIREMENTS&#xD;&#xA;&#xD;&#xA;A Contributor may choose to distribute the Program in object code form under its own license agreement, provided that:&#xD;&#xA;&#xD;&#xA;a) it complies with the terms and conditions of this Agreement; and&#xD;&#xA;&#xD;&#xA;b) its license agreement:&#xD;&#xA;&#xD;&#xA;i) effectively disclaims on behalf of all Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;&#xD;&#xA;&#xD;&#xA;ii) effectively excludes on behalf of all Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost profits;&#xD;&#xA;&#xD;&#xA;iii) states that any provisions which differ from this Agreement are offered by that Contributor alone and not by any other party; and&#xD;&#xA;&#xD;&#xA;iv) states that source code for the Program is available from such Contributor, and informs licensees how to obtain it in a reasonable manner on or through a medium customarily used for software exchange.&#xD;&#xA;&#xD;&#xA;When the Program is made available in source code form:&#xD;&#xA;&#xD;&#xA;a) it must be made available under this Agreement; and&#xD;&#xA;&#xD;&#xA;b) a copy of this Agreement must be included with each copy of the Program.&#xD;&#xA;&#xD;&#xA;Contributors may not remove or alter any copyright notices contained within the Program.&#xD;&#xA;&#xD;&#xA;Each Contributor must identify itself as the originator of its Contribution, if any, in a manner that reasonably allows subsequent Recipients to identify the originator of the Contribution.&#xD;&#xA;&#xD;&#xA;4. COMMERCIAL DISTRIBUTION&#xD;&#xA;&#xD;&#xA;Commercial distributors of software may accept certain responsibilities with respect to end users, business partners and the like. While this license is intended to facilitate the commercial use of the Program, the Contributor who includes the Program in a commercial product offering should do so in a manner which does not create potential liability for other Contributors. Therefore, if a Contributor includes the Program in a commercial product offering, such Contributor (&quot;Commercial Contributor&quot;) hereby agrees to defend and indemnify every other Contributor (&quot;Indemnified Contributor&quot;) against any losses, damages and costs (collectively &quot;Losses&quot;) arising from claims, lawsuits and other legal actions brought by a third party against the Indemnified Contributor to the extent caused by the acts or omissions of such Commercial Contributor in connection with its distribution of the Program in a commercial product offering. The obligations in this section do not apply to any claims or Losses relating to any actual or alleged intellectual property infringement. In order to qualify, an Indemnified Contributor must: a) promptly notify the Commercial Contributor in writing of such claim, and b) allow the Commercial Contributor to control, and cooperate with the Commercial Contributor in, the defense and any related settlement negotiations. The Indemnified Contributor may participate in any such claim at its own expense.&#xD;&#xA;&#xD;&#xA;For example, a Contributor might include the Program in a commercial product offering, Product X. That Contributor is then a Commercial Contributor. If that Commercial Contributor then makes performance claims, or offers warranties related to Product X, those performance claims and warranties are such Commercial Contributor's responsibility alone. Under this section, the Commercial Contributor would have to defend claims against the other Contributors related to those performance claims and warranties, and if a court requires any other Contributor to pay any damages as a result, the Commercial Contributor must pay those damages.&#xD;&#xA;&#xD;&#xA;5. NO WARRANTY&#xD;&#xA;&#xD;&#xA;EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE PROGRAM IS PROVIDED ON AN &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely responsible for determining the appropriateness of using and distributing the Program and assumes all risks associated with its exercise of rights under this Agreement , including but not limited to the risks and costs of program errors, compliance with applicable laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.&#xD;&#xA;&#xD;&#xA;6. DISCLAIMER OF LIABILITY&#xD;&#xA;&#xD;&#xA;EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER RECIPIENT NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.&#xD;&#xA;&#xD;&#xA;7. GENERAL&#xD;&#xA;&#xD;&#xA;If any provision of this Agreement is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this Agreement, and without further action by the parties hereto, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.&#xD;&#xA;&#xD;&#xA;If Recipient institutes patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Program itself (excluding combinations of the Program with other software or hardware) infringes such Recipient's patent(s), then such Recipient's rights granted under Section 2(b) shall terminate as of the date such litigation is filed.&#xD;&#xA;&#xD;&#xA;All Recipient's rights under this Agreement shall terminate if it fails to comply with any of the material terms or conditions of this Agreement and does not cure such failure in a reasonable period of time after becoming aware of such noncompliance. If all Recipient's rights under this Agreement terminate, Recipient agrees to cease use and distribution of the Program as soon as reasonably practicable. However, Recipient's obligations under this Agreement and any licenses granted by Recipient relating to the Program shall continue and survive.&#xD;&#xA;&#xD;&#xA;Everyone is permitted to copy and distribute copies of this Agreement, but in order to avoid inconsistency the Agreement is copyrighted and may only be modified in the following manner. The Agreement Steward reserves the right to publish new versions (including revisions) of this Agreement from time to time. No one other than the Agreement Steward has the right to modify this Agreement. The Eclipse Foundation is the initial Agreement Steward. The Eclipse Foundation may assign the responsibility to serve as the Agreement Steward to a suitable separate entity. Each new version of the Agreement will be given a distinguishing version number. The Program (including Contributions) may always be distributed subject to the version of the Agreement under which it was received. In addition, after a new version of the Agreement is published, Contributor may elect to distribute the Program (including its Contributions) under the new version. Except as expressly stated in Sections 2(a) and 2(b) above, Recipient receives no rights or licenses to the intellectual property of any Contributor under this Agreement, whether expressly, by implication, estoppel or otherwise. All rights in the Program not expressly granted under this Agreement are reserved.&#xD;&#xA;&#xD;&#xA;This Agreement is governed by the laws of the State of New York and the intellectual property laws of the United States of America. No party to this Agreement will bring a legal action under this Agreement more than one year after the cause of action arose. Each party waives its rights to a jury trial in any resulting litigation."
+    modelDirectory="/eu.cactosfp7.infrastructuremodels/src" editDirectory="/eu.cactosfp7.infrastructuremodels.edit/src"
+    editorDirectory="/eu.cactosfp7.infrastructuremodels.editor/src" modelPluginID="eu.cactosfp7.infrastructuremodels"
+    modelName="InfrastructureModels" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject"
+    rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl" suppressEMFMetaData="true"
+    testsDirectory="/eu.cactosfp7.infrastructuremodels.tests/src" importerID="org.eclipse.uml2.uml.ecore.importer"
+    featureDelegation="Dynamic" complianceLevel="5.0" providerRootExtendsClass="eu.cactosfp7.identifier.edit.FixedCDOItemProviderAdapter"
+    editPluginID="eu.cactosfp7.infrastructuremodels.edit" editorPluginID="eu.cactosfp7.infrastructuremodels.editor"
+    testsPluginID="eu.cactosfp7.infrastructuremodels.tests" runtimeVersion="2.5" language=""
+    usedGenPackages="platform:/plugin/tools.descartes.dlim.generator/src/tools/descartes/dlim/model/dlim.genmodel#//dlim ../../eu.cactosfp7.identifier/model/identifier.genmodel#//identifier"
+    importOrganizing="true" cleanup="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="DUPLICATE_FEATURES" value="DISCARD"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="DISCARD"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="DERIVED_FEATURES" value="PROCESS"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="DISCARD"/>
+    <details key="REDEFINING_OPERATIONS" value="REPORT"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="REPORT"/>
+    <details key="DUPLICATE_OPERATIONS" value="DISCARD"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUBSETTING_PROPERTIES" value="REPORT"/>
+    <details key="OPERATION_BODIES" value="PROCESS"/>
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="REDEFINING_PROPERTIES" value="REPORT"/>
+    <details key="INVOCATION_DELEGATES" value="IGNORE"/>
+    <details key="VALIDATION_DELEGATES" value="IGNORE"/>
+    <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
+    <details key="PROPERTY_DEFAULT_EXPRESSIONS" value="IGNORE"/>
+    <details key="NON_API_INVARIANTS" value="IGNORE"/>
+    <details key="UNTYPED_PROPERTIES" value="REPORT"/>
+  </genAnnotations>
+  <foreignModel>dlim.uml</foreignModel>
+  <foreignModel>identifier.uml</foreignModel>
+  <foreignModel>infrastructureloadmodelsnapshot.uml</foreignModel>
+  <foreignModel>infrastructuretopology.uml</foreignModel>
+  <foreignModel>virtualmachinemodel.uml</foreignModel>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <modelPluginVariables>OCL=org.eclipse.ocl</modelPluginVariables>
+  <modelPluginVariables>EMF_OCL=org.eclipse.ocl.ecore</modelPluginVariables>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="load" basePackage="eu.cactosfp7.infrastructuremodels"
+      resource="XMI" disposableProviderFactory="true" ecorePackage="loadmodel.ecore#/">
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Logical" basePackage="eu.cactosfp7.infrastructuremodels.load"
+        resource="XMI" disposableProviderFactory="true" fileExtensions="logicalload"
+        ecorePackage="loadmodel.ecore#//logical">
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="loadmodel.ecore#//logical/VirtualMemoryMeasurement">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/VirtualMemoryMeasurement/utilization"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/VirtualMemoryMeasurement/logicalLoadModel"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/VirtualMemoryMeasurement/observedVirtualMemory"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="loadmodel.ecore#//logical/VirtualNetworkInterconnectMeasurement">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/VirtualNetworkInterconnectMeasurement/observedVirtualNetworkInterconnect"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/VirtualNetworkInterconnectMeasurement/logicalLoadModel"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/VirtualNetworkInterconnectMeasurement/utilization"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="loadmodel.ecore#//logical/LogicalLoadModel">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/LogicalLoadModel/virtualMemoryMeasurements"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/LogicalLoadModel/virtualProcessingUnitMeasurements"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/LogicalLoadModel/virtualDiskMeasurements"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/LogicalLoadModel/requestArrivalRateMeasurement"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/LogicalLoadModel/responseArrivalRateMeasurement"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/LogicalLoadModel/virtualNetworkInterconnectMeasurements"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="loadmodel.ecore#//logical/VirtualProcessingUnitsMeasurement">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/VirtualProcessingUnitsMeasurement/utilization"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/VirtualProcessingUnitsMeasurement/observedVirtualProcessingUnit"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/VirtualProcessingUnitsMeasurement/logicalLoadModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="loadmodel.ecore#//logical/VirtualDiskMeasurement">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute loadmodel.ecore#//logical/VirtualDiskMeasurement/writeThroughput"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute loadmodel.ecore#//logical/VirtualDiskMeasurement/readThroughput"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute loadmodel.ecore#//logical/VirtualDiskMeasurement/writeDelay"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute loadmodel.ecore#//logical/VirtualDiskMeasurement/readDelay"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/VirtualDiskMeasurement/observedVirtualMachine"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/VirtualDiskMeasurement/observedVirtualDisk"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/VirtualDiskMeasurement/logicalLoadModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="loadmodel.ecore#//logical/RequestArrivalRateMeasurement">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/RequestArrivalRateMeasurement/observedVmImageConnector"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/RequestArrivalRateMeasurement/observedWhiteBoxApplicationInstance"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute loadmodel.ecore#//logical/RequestArrivalRateMeasurement/arrivalRate"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/RequestArrivalRateMeasurement/logicalLoadModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="loadmodel.ecore#//logical/ResponseArrivalRateMeasurement">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/ResponseArrivalRateMeasurement/observedVmImageConnector"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/ResponseArrivalRateMeasurement/observedWhiteBoxApplicationInstance"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute loadmodel.ecore#//logical/ResponseArrivalRateMeasurement/arrivalRate"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//logical/ResponseArrivalRateMeasurement/logicalLoadModel"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Physical" basePackage="eu.cactosfp7.infrastructuremodels.load"
+        resource="XMI" disposableProviderFactory="true" fileExtensions="physicalload"
+        ecorePackage="loadmodel.ecore#//physical">
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="loadmodel.ecore#//physical/PuMeasurement">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/PuMeasurement/utilization"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/PuMeasurement/observedPu"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/PuMeasurement/physicalLoadModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="loadmodel.ecore#//physical/PhysicalLoadModel">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/PhysicalLoadModel/memoryMeasurements"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/PhysicalLoadModel/storageMeasurement"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/PhysicalLoadModel/interconnectMeasurement"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/PhysicalLoadModel/powerConsumingEntityMeasurements"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/PhysicalLoadModel/cpuMeasurement"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="loadmodel.ecore#//physical/MemoryMeasurement">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/MemoryMeasurement/utilization"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/MemoryMeasurement/observedMemory"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/MemoryMeasurement/physicalLoadModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="loadmodel.ecore#//physical/StorageMeasurement">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/StorageMeasurement/storageUtilization"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/StorageMeasurement/observedStorage"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute loadmodel.ecore#//physical/StorageMeasurement/readThroughput"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute loadmodel.ecore#//physical/StorageMeasurement/writeThroughput"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/StorageMeasurement/physicalLoadModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="loadmodel.ecore#//physical/InterconnectMeasurement">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/InterconnectMeasurement/observedInterconnect"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute loadmodel.ecore#//physical/InterconnectMeasurement/measuredThroughput"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/InterconnectMeasurement/physicalLoadModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="loadmodel.ecore#//physical/PowerConsumingEntityMeasurement">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute loadmodel.ecore#//physical/PowerConsumingEntityMeasurement/currentConsumption"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/PowerConsumingEntityMeasurement/powerConsumingEntity"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/PowerConsumingEntityMeasurement/powerDrawnFrom"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/PowerConsumingEntityMeasurement/physicalLoadModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="loadmodel.ecore#//physical/Utilization">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/Utilization/puMeasurement"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/Utilization/memoryMeasurement"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/Utilization/storageMeasurement"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute loadmodel.ecore#//physical/Utilization/value"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/Utilization/virtualNetworkInterconnect"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/Utilization/virtualProcessingUnitMeasurement"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference loadmodel.ecore#//physical/Utilization/virtualMemoryMeasurement"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="Physicaldc" basePackage="eu.cactosfp7.infrastructuremodels"
+      resource="XMI" disposableProviderFactory="true" ecorePackage="physicaldcmodel.ecore#/">
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Architecturetype" basePackage="eu.cactosfp7.infrastructuremodels.physicaldc"
+        resource="XMI" disposableProviderFactory="true" ecorePackage="physicaldcmodel.ecore#//architecturetype">
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//architecturetype/ArchitectureType">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//architecturetype/ArchitectureType/name"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//architecturetype/ArchitectureType/architectureTypeRepository"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//architecturetype/ArchitectureTypeRepository">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//architecturetype/ArchitectureTypeRepository/architectureTypes"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Util" basePackage="eu.cactosfp7.infrastructuremodels.physicaldc"
+        resource="XMI" disposableProviderFactory="true" ecorePackage="physicaldcmodel.ecore#//util">
+      <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="physicaldcmodel.ecore#//util/Amount">
+        <genTypeParameters ecoreTypeParameter="physicaldcmodel.ecore#//util/Amount/E"/>
+      </genDataTypes>
+      <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="physicaldcmodel.ecore#//util/DataRate"/>
+      <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="physicaldcmodel.ecore#//util/Power"/>
+      <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="physicaldcmodel.ecore#//util/Unit">
+        <genTypeParameters ecoreTypeParameter="physicaldcmodel.ecore#//util/Unit/Q"/>
+      </genDataTypes>
+      <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="physicaldcmodel.ecore#//util/Quantity"/>
+      <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="physicaldcmodel.ecore#//util/DataAmount"/>
+      <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="physicaldcmodel.ecore#//util/Duration"/>
+      <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="physicaldcmodel.ecore#//util/Frequency"/>
+      <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="physicaldcmodel.ecore#//util/Dimensionless"/>
+      <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="physicaldcmodel.ecore#//util/Time"/>
+      <genDataTypes xsi:type="genmodel:GenDataType" ecoreDataType="physicaldcmodel.ecore#//util/Energy"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//util/Bandwidth">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//util/Bandwidth/value"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//util/Bandwidth/memorySpecificationRead"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//util/Bandwidth/networkInterconnect"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//util/Bandwidth/storageSpecificationRead"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//util/Bandwidth/storageSpecificationWrite"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//util/Bandwidth/memorySpecification"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="physicaldcmodel.ecore#//util/NamedElement">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//util/NamedElement/name"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//util/EStringToEStringObjectMapEntry">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//util/EStringToEStringObjectMapEntry/key"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//util/EStringToEStringObjectMapEntry/value"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Power" basePackage="eu.cactosfp7.infrastructuremodels.physicaldc"
+        resource="XMI" disposableProviderFactory="true" fileExtensions="pdcpower"
+        ecorePackage="physicaldcmodel.ecore#//power">
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="physicaldcmodel.ecore#//power/PowerProvidingEntity">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//power/PowerProvidingEntity/powerConsumingEntities"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//power/PowerProvidingEntity/suppliablePeakPower"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="physicaldcmodel.ecore#//power/PowerConsumingEntity">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//power/PowerConsumingEntity/powerProvidingEntities"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//power/PowerConsumingEntity/powerModelBinding"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//power/PowerConsumingEntity/powerCap"/>
+      </genClasses>
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Binding" basePackage="eu.cactosfp7.infrastructuremodels.physicaldc.power"
+          resource="XMI" disposableProviderFactory="true" fileExtensions="pdcbinding"
+          ecorePackage="physicaldcmodel.ecore#//power/binding">
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//power/binding/FixedFactorValue">
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+              createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//power/binding/FixedFactorValue/powerModelBinding"/>
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//power/binding/FixedFactorValue/boundFactor"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//power/binding/FixedFactorValue/value"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//power/binding/PowerModelBinding">
+          <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+              propertySortChoices="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//power/binding/PowerModelBinding/powerModel"/>
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+              createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//power/binding/PowerModelBinding/powerModelBindingRepository"/>
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+              createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//power/binding/PowerModelBinding/fixedFactorValues"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//power/binding/PowerModelBindingRepository">
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+              createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//power/binding/PowerModelBindingRepository/powerModelBindings"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Specification" basePackage="eu.cactosfp7.infrastructuremodels.physicaldc.power"
+          resource="XMI" disposableProviderFactory="true" fileExtensions="pdcspec"
+          ecorePackage="physicaldcmodel.ecore#//power/specification">
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//power/specification/PowerModelRepository">
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+              createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//power/specification/PowerModelRepository/powerModels"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="physicaldcmodel.ecore#//power/specification/ConsumptionFactor">
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+              createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//power/specification/ConsumptionFactor/powerModel"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//power/specification/FixedFactor"/>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//power/specification/MeasuredFactor">
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//power/specification/MeasuredFactor/unit"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//power/specification/MeasuredFactor/unitString"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//power/specification/PowerModel">
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+              createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//power/specification/PowerModel/powermodelRepository"/>
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+              createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//power/specification/PowerModel/consumptionFactors"/>
+          <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//power/specification/PowerModel/expression"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Core" basePackage="eu.cactosfp7.infrastructuremodels.physicaldc"
+        resource="XMI" disposableProviderFactory="true" fileExtensions="physical,core"
+        ecorePackage="physicaldcmodel.ecore#//core">
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="physicaldcmodel.ecore#//core/NodeState">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="physicaldcmodel.ecore#//core/NodeState/OFF"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="physicaldcmodel.ecore#//core/NodeState/RUNNING"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="physicaldcmodel.ecore#//core/NodeState/FAILURE"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="physicaldcmodel.ecore#//core/NodeState/UNKNOWN"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="physicaldcmodel.ecore#//core/NodeState/MAINTENANCE"/>
+      </genEnums>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//core/MemorySpecification">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//core/MemorySpecification/size"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/MemorySpecification/node"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/MemorySpecification/bandwidthWrite"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/MemorySpecification/bandwidthRead"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="physicaldcmodel.ecore#//core/MonitorableResource"/>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="physicaldcmodel.ecore#//core/AbstractNode">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/AbstractNode/rack"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/AbstractNode/cpuSpecifications"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/AbstractNode/storageSpecifications"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//core/AbstractNode/state"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/AbstractNode/memorySpecifications"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="physicaldcmodel.ecore#//core/ConnectedEntity">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/ConnectedEntity/networkInterconnects"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//core/NetworkInterconnect">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/NetworkInterconnect/bandwidth"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/NetworkInterconnect/physicalDCModel"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/NetworkInterconnect/connectedEntities"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//core/PhysicalDCModel">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/PhysicalDCModel/switches"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/PhysicalDCModel/racks"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/PhysicalDCModel/powerSupplies"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/PhysicalDCModel/clusters"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/PhysicalDCModel/networkInterconnects"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//core/Switch">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/Switch/physicalDCModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//core/Rack">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/Rack/nodes"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/Rack/powerSupplies"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/Rack/physicalDCModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//core/PowerDistributionUnit">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/PowerDistributionUnit/physicalDCModel"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/PowerDistributionUnit/hostedIn"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//core/Cluster">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//core/Cluster/clusterId"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/Cluster/containedNodes"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/Cluster/physicalDCModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//core/StorageSpecification">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//core/StorageSpecification/size"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//core/StorageSpecification/readDelay"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//core/StorageSpecification/writeDelay"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/StorageSpecification/readBandwidth"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/StorageSpecification/writeBandwidth"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/StorageSpecification/node"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//core/NetworkAttachedStorage">
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="physicaldcmodel.ecore#//core/NetworkAttachedStorage/NetworkAttachedStorageMustHaveAtLeastOneStorageSpecification">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="physicaldcmodel.ecore#//core/NetworkAttachedStorage/NetworkAttachedStorageMustHaveAtLeastOneStorageSpecification/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="physicaldcmodel.ecore#//core/NetworkAttachedStorage/NetworkAttachedStorageMustHaveAtLeastOneStorageSpecification/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//core/ComputeNode">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/ComputeNode/hypervisor"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="physicaldcmodel.ecore#//core/ComputeNode/ComputeNodesMustHaveAtLeastOneProcessingUnit">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="physicaldcmodel.ecore#//core/ComputeNode/ComputeNodesMustHaveAtLeastOneProcessingUnit/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="physicaldcmodel.ecore#//core/ComputeNode/ComputeNodesMustHaveAtLeastOneProcessingUnit/context"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="physicaldcmodel.ecore#//core/ComputeNode/ComputeNodesMustHaveAtLeastOneMemorySpecification">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="physicaldcmodel.ecore#//core/ComputeNode/ComputeNodesMustHaveAtLeastOneMemorySpecification/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="physicaldcmodel.ecore#//core/ComputeNode/ComputeNodesMustHaveAtLeastOneMemorySpecification/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="physicaldcmodel.ecore#//core/ProcessingUnitSpecification">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/ProcessingUnitSpecification/node"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//core/ProcessingUnitSpecification/puId"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//core/ProcessingUnitSpecification/frequency"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference physicaldcmodel.ecore#//core/ProcessingUnitSpecification/architectureType"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//core/ProcessingUnitSpecification/numberOfCores"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute physicaldcmodel.ecore#//core/ProcessingUnitSpecification/supportsTurboMode"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="Logicaldc" basePackage="eu.cactosfp7.infrastructuremodels"
+      resource="XMI" disposableProviderFactory="true" ecorePackage="logicaldcmodel.ecore#/">
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Hypervisor" basePackage="eu.cactosfp7.infrastructuremodels.logicaldc"
+        resource="XMI" disposableProviderFactory="true" ecorePackage="logicaldcmodel.ecore#//hypervisor">
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//hypervisor/HypervisorRepository">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//hypervisor/HypervisorRepository/hypervisorTypes"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//hypervisor/HypervisorType">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//hypervisor/HypervisorType/name"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//hypervisor/HypervisorType/hypervisorRepository"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Application" basePackage="eu.cactosfp7.infrastructuremodels.logicaldc"
+        resource="XMI" disposableProviderFactory="true" ecorePackage="logicaldcmodel.ecore#//application">
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="logicaldcmodel.ecore#//application/LoadBalancingPolicy">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="logicaldcmodel.ecore#//application/LoadBalancingPolicy/RoundRobin"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="logicaldcmodel.ecore#//application/LoadBalancingPolicy/HashBased"/>
+      </genEnums>
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="logicaldcmodel.ecore#//application/ControlFlowVariable">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="logicaldcmodel.ecore#//application/ControlFlowVariable/REQUESTVALUE"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="logicaldcmodel.ecore#//application/ControlFlowVariable/REQUESTBYTESIZE"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="logicaldcmodel.ecore#//application/ControlFlowVariable/REQUESTHASH"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="logicaldcmodel.ecore#//application/ControlFlowVariable/RESPONSEVALUE"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="logicaldcmodel.ecore#//application/ControlFlowVariable/RESPONSEBYTESIZE"/>
+      </genEnums>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/VMBehaviour">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/VMBehaviour/virtualMachine"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/VMBehaviour/vmImageBehaviour"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/ApplicationTemplate">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ApplicationTemplate/logicalDCModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/ServiceInterface">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ServiceInterface/serviceOperations"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ServiceInterface/logicalDCModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/ServiceOperation">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ServiceOperation/serviceInterface"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/ApplicationInstance">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ApplicationInstance/applicationTemplate"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ApplicationInstance/logicalDCModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/VMImageBehaviour">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/VMImageBehaviour/vmImage"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/VMImageBehaviour/defaultFlavour"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/BlackBoxVMBehaviour"/>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/BlackBoxBehaviour">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/BlackBoxBehaviour/blackBoxWorkloads"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/RepeatableBehaviour">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/RepeatableBehaviour/patternIsRepeating"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/BlackBoxWorkload">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/BlackBoxWorkload/resourceDemandRates"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/BlackBoxWorkload/originReferenceTime"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/BlackBoxWorkload/onResource"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/BlackBoxWorkload/resourceDemandUnit"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/BlackBoxWorkload/blackBoxBehaviour"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/GreyBoxVMBehaviour">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/GreyBoxVMBehaviour/progress"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/GreyBoxBehaviour">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/GreyBoxBehaviour/workloadPhases"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/WorkloadPhase">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/WorkloadPhase/resourceDemands"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/WorkloadPhase/greyBoxBehaviour"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/ResourceDemand">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/ResourceDemand/amount"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ResourceDemand/onResource"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ResourceDemand/workloadPhase"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/Progress">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/Progress/currentPhase"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/Progress/resourceDemandProgress"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/Progress/greyBoxVMBehaviour"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/Progress/oneProgressPerDemand">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/Progress/oneProgressPerDemand/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/Progress/oneProgressPerDemand/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/ResourceDemandProgress">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/ResourceDemandProgress/amount"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ResourceDemandProgress/resourceDemand"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ResourceDemandProgress/progress"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/ComposedVMImage">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ComposedVMImage/applicationTemplate"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ComposedVMImage/vmImageBehaviour"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/ComposedVMImage/maximumServableRequests"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/WhiteBoxApplicationTemplate">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/WhiteBoxApplicationTemplate/vmImageConnectors"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/WhiteBoxApplicationTemplate/userFacingServices"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/WhiteBoxApplicationTemplate/whiteBoxUserBehaviourTemplate"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/WhiteBoxApplicationTemplate/composedVMImages"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/VMImageConnector">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/VMImageConnector/serviceProvidedRole"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/VMImageConnector/serviceRequiredRole"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/VMImageConnector/applicationTemplate"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/ServiceProvidedRole">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ServiceProvidedRole/serviceInterface"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/ServiceRequiredRole">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ServiceRequiredRole/serviceInterface"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/WhiteBoxUserBehaviourTemplate">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/WhiteBoxUserBehaviourTemplate/whiteBoxApplicationTemplate"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/WhiteBoxUserBehaviourTemplate/AllServiceCallMustBeToUserFacingServices">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/WhiteBoxUserBehaviourTemplate/AllServiceCallMustBeToUserFacingServices/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/WhiteBoxUserBehaviourTemplate/AllServiceCallMustBeToUserFacingServices/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/UsageScenario">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/UsageScenario/userBehaviours"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/UserBehaviour">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/UserBehaviour/controlFlowActions"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/UserBehaviour/arrivalRate"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/UserBehaviour/usageScenario"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/UserBehaviour/UserBehaviourMustNotHaveResourceDemandActions">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/UserBehaviour/UserBehaviourMustNotHaveResourceDemandActions/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/UserBehaviour/UserBehaviourMustNotHaveResourceDemandActions/context"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/UserBehaviour/UserBehaviourMustNotHaveNonApplicationServiceCalls">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/UserBehaviour/UserBehaviourMustNotHaveNonApplicationServiceCalls/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/UserBehaviour/UserBehaviourMustNotHaveNonApplicationServiceCalls/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/ControlFlowAction">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ControlFlowAction/successingControlFlowAction"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ControlFlowAction/predecessingControlFlowAction"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ControlFlowAction/serviceEffect"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ControlFlowAction/userBehaviour"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/ControlFlowAction/ControlFlowActionMustNotHaveItselfAsIncomingOrOutgoingActionTransition">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/ControlFlowAction/ControlFlowActionMustNotHaveItselfAsIncomingOrOutgoingActionTransition/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/ControlFlowAction/ControlFlowActionMustNotHaveItselfAsIncomingOrOutgoingActionTransition/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/ServiceEffect">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ServiceEffect/forServiceOperation"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ServiceEffect/whiteBoxBehaviour"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ServiceEffect/forServiceProvidedRole"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ServiceEffect/controlFlowActions"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/ServiceEffect/ServiceEffectMustHaveExactlyOneStartAction">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/ServiceEffect/ServiceEffectMustHaveExactlyOneStartAction/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/ServiceEffect/ServiceEffectMustHaveExactlyOneStartAction/context"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/ServiceEffect/ServiceEffectMustHaveExactlyOneStopAction">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/ServiceEffect/ServiceEffectMustHaveExactlyOneStopAction/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/ServiceEffect/ServiceEffectMustHaveExactlyOneStopAction/context"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/ServiceEffect/ServiceEffectMustNotHaveApplicationCalls">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/ServiceEffect/ServiceEffectMustNotHaveApplicationCalls/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/ServiceEffect/ServiceEffectMustNotHaveApplicationCalls/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/WhiteBoxBehaviour">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/WhiteBoxBehaviour/serviceEffects"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/ArrivalRate">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ArrivalRate/userBehaviour"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/WhiteBoxVMImageBehaviour">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/WhiteBoxVMImageBehaviour/referenceResourceSpecifications"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/WhiteBoxVMImageBehaviour/composedVMImage"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/WhiteBoxVMImageBehaviour/VMImageBehaviourServiceEffectsMayOnlyContainServiceOperationCallActionsUsingRequiredServiceRolesOfTheComposedVMImage">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/WhiteBoxVMImageBehaviour/VMImageBehaviourServiceEffectsMayOnlyContainServiceOperationCallActionsUsingRequiredServiceRolesOfTheComposedVMImage/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/WhiteBoxVMImageBehaviour/VMImageBehaviourServiceEffectsMayOnlyContainServiceOperationCallActionsUsingRequiredServiceRolesOfTheComposedVMImage/context"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/WhiteBoxVMImageBehaviour/WhiteBoxVMImageBehaviourMustHaveDefaultFlavourReference">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/WhiteBoxVMImageBehaviour/WhiteBoxVMImageBehaviourMustHaveDefaultFlavourReference/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/WhiteBoxVMImageBehaviour/WhiteBoxVMImageBehaviourMustHaveDefaultFlavourReference/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/ScalableVMImageConnector">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/ScalableVMImageConnector/loadBalancingPolicy"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/ScalableVMImageConnector/autoScalingAnalysisInterval"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/ScalableVMImageConnector/minInstances"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/ScalableVMImageConnector/defaultInstances"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/ScalableVMImageConnector/maxInstances"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/ComposedVM">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ComposedVM/virtualMachine"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ComposedVM/composedVMImage"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ComposedVM/applicationInstance"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/WhiteBoxApplicationInstance">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/WhiteBoxApplicationInstance/whiteBoxUserBehaviourInstance"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/WhiteBoxApplicationInstance/composedVMs"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/WhiteBoxUserBehaviourInstance">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/WhiteBoxUserBehaviourInstance/whiteBoxApplicationInstance"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/StartAction">
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/StartAction/StartActionMustNotHaveIncomingActionTransition">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/StartAction/StartActionMustNotHaveIncomingActionTransition/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/StartAction/StartActionMustNotHaveIncomingActionTransition/context"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/StartAction/StartActionMustHaveOutgoingActionTransition">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/StartAction/StartActionMustHaveOutgoingActionTransition/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/StartAction/StartActionMustHaveOutgoingActionTransition/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/StopAction">
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/StopAction/StopActionMustHaveIncomingActionTransition">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/StopAction/StopActionMustHaveIncomingActionTransition/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/StopAction/StopActionMustHaveIncomingActionTransition/context"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/StopAction/StopActionMustNotHaveOutgoingActionTransition">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/StopAction/StopActionMustNotHaveOutgoingActionTransition/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/StopAction/StopActionMustNotHaveOutgoingActionTransition/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/ServiceOperationCallAction">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ServiceOperationCallAction/serviceRequiredRole"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ServiceOperationCallAction/serviceOperationOfRequiredRole"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/ServiceOperationCallAction/ServiceOperationMustBePartOfTheInterfaceStatedForTheRequiredRole">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/ServiceOperationCallAction/ServiceOperationMustBePartOfTheInterfaceStatedForTheRequiredRole/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/ServiceOperationCallAction/ServiceOperationMustBePartOfTheInterfaceStatedForTheRequiredRole/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/InternalControlFlowAction">
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/InternalControlFlowAction/InternalControlFlowActionMustHaveIncomingAndOutgoingActionTransitions">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/InternalControlFlowAction/InternalControlFlowActionMustHaveIncomingAndOutgoingActionTransitions/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/InternalControlFlowAction/InternalControlFlowActionMustHaveIncomingAndOutgoingActionTransitions/context"/>
+        </genOperations>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/InternalControlFlowAction/InternalControlFlowActionMustNotHaveTheSameIncomingAndOutgoingActionTransitions">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/InternalControlFlowAction/InternalControlFlowActionMustNotHaveTheSameIncomingAndOutgoingActionTransitions/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/InternalControlFlowAction/InternalControlFlowActionMustNotHaveTheSameIncomingAndOutgoingActionTransitions/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/ResourceDemandAction">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ResourceDemandAction/resourceDemands"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/VariableResourceDemand">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/VariableResourceDemand/amount"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/VariableResourceDemand/unit"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/VariableResourceDemand/onResource"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/VariableResourceDemand/resourceDemandAction"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/SetVariableAction">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/SetVariableAction/variableAssignments"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/VariableAssignment">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/VariableAssignment/variable"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/VariableAssignment/value"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/VariableAssignment/setVariableAction"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/WhiteBoxVMBehaviour">
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//application/WhiteBoxVMBehaviour/VMImageBehaviourServiceEffectsMayOnlyContainServiceOperationCallActionsUsingRequiredServiceRolesOfTheComposedVMImage">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/WhiteBoxVMBehaviour/VMImageBehaviourServiceEffectsMayOnlyContainServiceOperationCallActionsUsingRequiredServiceRolesOfTheComposedVMImage/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//application/WhiteBoxVMBehaviour/VMImageBehaviourServiceEffectsMayOnlyContainServiceOperationCallActionsUsingRequiredServiceRolesOfTheComposedVMImage/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/GreyBoxVMImageBehaviour">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/GreyBoxVMImageBehaviour/referenceResourceSpecifications"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/GreyBoxVMImageBehaviour/greyBoxApplicationTemplate"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/GreyBoxApplicationTemplate">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/GreyBoxApplicationTemplate/greyBoxVMImageBehaviour"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/BlackBoxApplicationTemplate">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/BlackBoxApplicationTemplate/blackBoxVMImageBehaviour"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/BlackBoxVMImageBehaviour">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/BlackBoxVMImageBehaviour/referenceResourceSpecifications"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/BlackBoxVMImageBehaviour/blackBoxApplicationTemplate"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/GreyBoxApplicationInstance">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/GreyBoxApplicationInstance/virtualMachine"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/BlackBoxApplicationInstance">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/BlackBoxApplicationInstance/virtualMachine"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/ClosedWorkload">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/ClosedWorkload/userPopulation"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/ClosedWorkload/thinkTime"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/ClosedWorkload/timeUnit"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/OpenWorkload"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/ConstantOpenWorkload">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/ConstantOpenWorkload/interarrivalTime"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/ConstantOpenWorkload/timeUnit"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/VariableOpenWorkload">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/VariableOpenWorkload/arrivalRate"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/VariableOpenWorkload/arrivalRateUnit"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//application/VariableOpenWorkload/samplingInterval"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//application/ApplicationCallAction">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ApplicationCallAction/serviceOperationOfProvidedRole"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/ApplicationCallAction/serviceProvidedRole"/>
+      </genClasses>
+      <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Entity" basePackage="eu.cactosfp7.infrastructuremodels.logicaldc.application"
+          disposableProviderFactory="true" ecorePackage="logicaldcmodel.ecore#//application/entity">
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/entity/Entity"/>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/entity/InterfaceProvidingEntity">
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+              createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/entity/InterfaceProvidingEntity/providedRoles"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/entity/ProvidedRole">
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+              createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/entity/ProvidedRole/interfaceProvidingEntity"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/entity/Role"/>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/entity/InterfaceRequiringEntity">
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+              createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/entity/InterfaceRequiringEntity/requiredRoles"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/entity/RequiredRole">
+          <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+              createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//application/entity/RequiredRole/interfaceRequiringEntity"/>
+        </genClasses>
+        <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//application/entity/InterfaceProvidingRequiringEntity"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Core" basePackage="eu.cactosfp7.infrastructuremodels.logicaldc"
+        resource="XMI" disposableProviderFactory="true" fileExtensions="logical,core"
+        ecorePackage="logicaldcmodel.ecore#//core">
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="logicaldcmodel.ecore#//core/VM_State">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="logicaldcmodel.ecore#//core/VM_State/NEW"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="logicaldcmodel.ecore#//core/VM_State/UNASSIGNED"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="logicaldcmodel.ecore#//core/VM_State/PLACED"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="logicaldcmodel.ecore#//core/VM_State/RUNNING"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="logicaldcmodel.ecore#//core/VM_State/PAUSED"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="logicaldcmodel.ecore#//core/VM_State/SHUTDOWN"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="logicaldcmodel.ecore#//core/VM_State/IN_OPTIMISATION"/>
+      </genEnums>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//core/VirtualMachine">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualMachine/logicalDCModel"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualMachine/puAffinity"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualMachine/hypervisor"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualMachine/vMImageInstance"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//core/VirtualMachine/state"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualMachine/inputParameters"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualMachine/instantiationProperties"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualMachine/virtualProcessingUnits"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualMachine/runtimeApplicationModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//core/ConnectedVirtualEntity">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/ConnectedVirtualEntity/virtualNetworkInterconnects"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//core/VirtualNetworkInterconnect">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualNetworkInterconnect/logicalDCModel"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualNetworkInterconnect/connectedVirtualEntity"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//core/VirtualNetworkInterconnect/IsUniquelyConnected">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//core/VirtualNetworkInterconnect/IsUniquelyConnected/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//core/VirtualNetworkInterconnect/IsUniquelyConnected/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//core/LogicalDCModel">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/LogicalDCModel/hypervisors"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/LogicalDCModel/virtualNetworks"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/LogicalDCModel/volumesAndImages"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/LogicalDCModel/unassignedVms"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/LogicalDCModel/applicationTemplates"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//core/LogicalDCModel/cyclicOptimizationInterval"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/LogicalDCModel/serviceInterfaces"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/LogicalDCModel/applicationInstances"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/LogicalDCModel/flavours"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/LogicalDCModel/virtualNetworkInterconnects"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//core/VirtualNetwork">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualNetwork/logicalDCModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//core/VirtualDisk">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//core/VirtualDisk/capacity"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualDisk/storageLocation"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//core/VirtualDisk/usedCapacity"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualDisk/deltaOverlay"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualDisk/parent"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualDisk/logicalDCModel"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//core/VirtualDisk/VirtualDiskMustHaveACapacityIfItHasNoParent">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//core/VirtualDisk/VirtualDiskMustHaveACapacityIfItHasNoParent/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//core/VirtualDisk/VirtualDiskMustHaveACapacityIfItHasNoParent/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//core/Flavour">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//core/Flavour/flavourRefVMI"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//core/Flavour/numberVirtualCores"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//core/Flavour/sizeRam"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//core/Flavour/sizeStorage"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/Flavour/architectureType"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/Flavour/logicalDCModel"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="logicaldcmodel.ecore#//core/VirtualMemoryConsumingEntity">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualMemoryConsumingEntity/virtualMemoryUnits"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//core/VirtualMemory">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//core/VirtualMemory/provisioned"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualMemory/virtualMemoryConsumingEntity"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//core/PuAffinity">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/PuAffinity/affinePus"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/PuAffinity/virtualMachine"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//core/VMImageInstance">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VMImageInstance/rootDisk"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VMImageInstance/sharedDisks"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VMImageInstance/vmSpecificDisks"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VMImageInstance/virtualMachine"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//core/VirtualProcessingUnit">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//core/VirtualProcessingUnit/virtualCores"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualProcessingUnit/architectureType"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VirtualProcessingUnit/virtualMachine"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//core/AssignedTransferRate">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//core/AssignedTransferRate/value"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//core/VMImage">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VMImage/additionalSharedDisks"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VMImage/additionalVmSpecificDisks"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/VMImage/startupTimes"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="logicaldcmodel.ecore#//core/VMImage/VMImageMustHaveAUsedCapacity">
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//core/VMImage/VMImageMustHaveAUsedCapacity/diagnostics"/>
+          <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="logicaldcmodel.ecore#//core/VMImage/VMImageMustHaveAUsedCapacity/context"/>
+        </genOperations>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//core/StartupTime">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/StartupTime/onNode"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//core/StartupTime/durationUnit"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/StartupTime/hypervisor"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute logicaldcmodel.ecore#//core/StartupTime/duration"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/StartupTime/vmImage"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="logicaldcmodel.ecore#//core/Hypervisor">
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/Hypervisor/logicalDCModel"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/Hypervisor/virtualMachines"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/Hypervisor/startupTimes"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/Hypervisor/hypervisorType"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/Hypervisor/rootVolume"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference logicaldcmodel.ecore#//core/Hypervisor/node"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
+  <rm:locator pattern="^eu\.cactosfp7\.infrastructuremodels*" searchPathRef="CactosModels" failOnError="false"/>
+  <rm:locator pattern="^eu\.cactosfp7\.optimisationplan*" searchPathRef="CactosSVN" failOnError="false"/>
+  <rm:locator pattern="^eu\.cactosfp7\.identifier*" searchPathRef="CactosSVN"/>
+  <rm:locator pattern="^JScience*" searchPathRef="CactosModels" failOnError="false"/>
+  <rm:locator pattern="^org\.apache\.log4j*" searchPathRef="mwe"/>
+  <rm:locator pattern="^tools\.descartes\.dlim*" searchPathRef="Limbo"/>
+  <rm:searchPath name="CactosSVN">
+    <rm:provider componentTypes="eclipse.feature,osgi.bundle,buckminster" readerType="svn">
+      <rm:uri format="https://cactosbuild:fA8qXqNwNQLoLuc6@svn.fzi.de/svn/cactos/code/integration/trunk/{0}">
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+  <rm:searchPath name="CactosModels">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
+      <rm:property key="buckminster.source" value="false"/>
+      <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/cactos/infrastructuremodels/nightly/"/>
+    </rm:provider>
+  </rm:searchPath>
+  <rm:searchPath name="SDQ_Commons">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature,buckminster" readerType="p2" source="false" mutable="false">
+      <rm:property key="buckminster.source" value="false"/>
+      <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="http://sdqweb.ipd.kit.edu/eclipse/commons/nightly"/>
+    </rm:provider>
+  </rm:searchPath>
+  <rm:searchPath name="mwe">
+    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
+      <rm:property key="buckminster.source" value="false"/>
+      <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="http://download.eclipse.org/tools/orbit/downloads/drops/I20141023165154/repository/"/>
+    </rm:provider>
+  </rm:searchPath>
+  <rm:searchPath name="Limbo">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
+      <rm:property key="buckminster.source" value="false"/>
+      <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="http://se2.informatik.uni-wuerzburg.de/eclipse/limbo/"/>
+    </rm:provider>
+  </rm:searchPath>
+</rm:rmap>

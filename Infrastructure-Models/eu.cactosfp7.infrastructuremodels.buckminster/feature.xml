@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="eu.cactosfp7.infrastructuremodels.buckminster"
+      label="Infrastructure Models"
+      version="1.0.0"
+      provider-name="CACTOS">
+
+   <url>
+      <discovery label="Palladio Commons" url="https://sdqweb.ipd.kit.edu/eclipse/commons/nightly/"/>
+      <discovery label="MDSD Profiles" url="http://sdqweb.ipd.kit.edu/eclipse/mdsdprofiles/nightly"/>
+      <discovery label="Eclipse Orbit" url="http://download.eclipse.org/tools/orbit/downloads/drops/R20120526062928/repository/"/>
+      <discovery label="Limbo" url="http://se2.informatik.uni-wuerzburg.de/eclipse/limbo/"/>
+   </url>
+
+   <includes
+         id="eu.cactosfp7.infrastructuremodels.feature"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="eu.cactosfp7.infrastructuremodels"/>
+      <import plugin="eu.cactosfp7.identifier"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.junit"/>
+      <import plugin="tools.descartes.dlim.generator"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+   </requires>
+
+   <plugin
+         id="eu.cactosfp7.infrastructuremodels.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="optimisationplan" nsURI="http://www.cactosfp7.eu/OptimisationPlan/1.0"
+    nsPrefix="optimisationplan">
+  <eClassifiers xsi:type="ecore:EClass" name="OptimisationActionStep" abstract="true"
+      eSuperTypes="#//OptimisationStep"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OptimisationStep" abstract="true" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sequentialSteps" ordered="false"
+        eType="#//SequentialSteps" eOpposite="#//SequentialSteps/optimisationSteps"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parallelSteps" ordered="false"
+        eType="#//ParallelSteps" eOpposite="#//ParallelSteps/optimisationSteps"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optimisationPlan" ordered="false"
+        eType="#//OptimisationPlan" eOpposite="#//OptimisationPlan/optimisationStep"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionStatus" ordered="false"
+        lowerBound="1" eType="#//ExecutionStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionStarted" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionStopped" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequentialSteps" eSuperTypes="#//OptimisationStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optimisationSteps" upperBound="-1"
+        eType="#//OptimisationStep" containment="true" eOpposite="#//OptimisationStep/sequentialSteps"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParallelSteps" eSuperTypes="#//OptimisationStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optimisationSteps" ordered="false"
+        upperBound="-1" eType="#//OptimisationStep" containment="true" eOpposite="#//OptimisationStep/parallelSteps"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptimisationPlan" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionStatus" ordered="false"
+        lowerBound="1" eType="#//ExecutionStatus" defaultValueLiteral="READY"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationDate" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionStarted" ordered="false"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionStopped" ordered="false"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repository" ordered="false"
+        eType="#//OptimisationPlanRepository" eOpposite="#//OptimisationPlanRepository/optimisationPlans"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optimisationStep" ordered="false"
+        lowerBound="1" eType="#//OptimisationStep" containment="true" eOpposite="#//OptimisationStep/optimisationPlan"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ExecutionStatus">
+    <eLiterals name="READY"/>
+    <eLiterals name="IN_EXECUTION" value="1"/>
+    <eLiterals name="COMPLETED_SUCCESSFUL" value="2"/>
+    <eLiterals name="COMPLETED_FAILED" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptimisationPlanRepository">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optimisationPlans" ordered="false"
+        upperBound="-1" eType="#//OptimisationPlan" containment="true" eOpposite="#//OptimisationPlan/repository"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VmPlacementAction" eSuperTypes="#//OptimisationActionStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetHost" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/Hypervisor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vmImage" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/VirtualDisk"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="puAffinity" ordered="false"
+        upperBound="-1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/PuAffinity"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="proposedMemory" ordered="false"
+        lowerBound="1">
+      <eGenericType eClassifier="ecore:EDataType ../../eu.cactosfp7.infrastructuremodels/model/physicaldcmodel.ecore#//util/Amount">
+        <eTypeArguments eClassifier="ecore:EDataType ../../eu.cactosfp7.infrastructuremodels/model/physicaldcmodel.ecore#//util/DataAmount"/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="proposedStorage" ordered="false"
+        lowerBound="1">
+      <eGenericType eClassifier="ecore:EDataType ../../eu.cactosfp7.infrastructuremodels/model/physicaldcmodel.ecore#//util/Amount">
+        <eTypeArguments eClassifier="ecore:EDataType ../../eu.cactosfp7.infrastructuremodels/model/physicaldcmodel.ecore#//util/DataAmount"/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="proposedVirtualCores" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unassignedVirtualMachine"
+        ordered="false" lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/VirtualMachine"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VmMigrationAction" eSuperTypes="#//OptimisationActionStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="migratedVm" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/VirtualMachine"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetHost" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/Hypervisor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="puAffinityAfterMigration"
+        ordered="false" upperBound="-1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/PuAffinity"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceHost" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/Hypervisor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VerticalScalingAction" abstract="true"
+      eSuperTypes="#//OptimisationActionStep"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StopVmAction" eSuperTypes="#//OptimisationActionStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stoppedVm" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/VirtualMachine"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicalMemoryScalingAction" eSuperTypes="#//VerticalScalingAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="proposedSize" ordered="false"
+        lowerBound="1">
+      <eGenericType eClassifier="ecore:EDataType ../../eu.cactosfp7.infrastructuremodels/model/physicaldcmodel.ecore#//util/Amount">
+        <eTypeArguments eClassifier="ecore:EDataType ../../eu.cactosfp7.infrastructuremodels/model/physicaldcmodel.ecore#//util/DataAmount"/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scaledVirtualMemory" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/VirtualMemory"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicalStorageScalingAction" eSuperTypes="#//VerticalScalingAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="proposedLocalSize" ordered="false"
+        lowerBound="1">
+      <eGenericType eClassifier="ecore:EDataType ../../eu.cactosfp7.infrastructuremodels/model/physicaldcmodel.ecore#//util/Amount">
+        <eTypeArguments eClassifier="ecore:EDataType ../../eu.cactosfp7.infrastructuremodels/model/physicaldcmodel.ecore#//util/DataAmount"/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vMImageInstance" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/VMImageInstance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PhysicalFrequencyScalingAction" eSuperTypes="#//VerticalScalingAction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scaledPhysicalProcessingUnit"
+        ordered="false" lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/physicaldcmodel.ecore#//core/ProcessingUnitSpecification"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="proposedFrequency" ordered="false"
+        lowerBound="1">
+      <eGenericType eClassifier="ecore:EDataType ../../eu.cactosfp7.infrastructuremodels/model/physicaldcmodel.ecore#//util/Amount">
+        <eTypeArguments eClassifier="ecore:EDataType ../../eu.cactosfp7.infrastructuremodels/model/physicaldcmodel.ecore#//util/Frequency"/>
+      </eGenericType>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StartVmAction" eSuperTypes="#//OptimisationActionStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startedVm" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/VirtualMachine"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SuspendVmAction" eSuperTypes="#//OptimisationActionStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="suspendedVm" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/VirtualMachine"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ManagePhysicalNodeAction" eSuperTypes="#//OptimisationActionStep">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetState" ordered="false"
+        lowerBound="1" eType="ecore:EEnum ../../eu.cactosfp7.infrastructuremodels/model/physicaldcmodel.ecore#//core/NodeState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="managedNode" ordered="false"
+        eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/physicaldcmodel.ecore#//core/AbstractNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VirtualCoresScalingAction" eSuperTypes="#//VerticalScalingAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="proposedNumberOfCores"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scaledvirtualPu" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/VirtualProcessingUnit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StartApplication" eSuperTypes="#//OptimisationActionStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="applicationTemplate" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//application/ApplicationTemplate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StopApplication" eSuperTypes="#//OptimisationActionStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="applicationInstance" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//application/ApplicationInstance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScaleOut" eSuperTypes="#//OptimisationActionStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loadBalancerInstance" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//application/ComposedVM"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scalingConnector" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//application/ScalableVMImageConnector"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScaleIn" eSuperTypes="#//OptimisationActionStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loadBalancerInstance" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//application/ComposedVM"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scaledVM" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//application/ComposedVM"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StartWhiteBoxApplication" eSuperTypes="#//StartApplication">
+    <eOperations name="ApplicationTemplateMustBeWhitBoxApplicationTemplate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="applicationTemplate.oclIsTypeOf(logicaldc::application::WhiteBoxApplicationTemplate)&#xD;&#xA;"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="context">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cache of context-specific information."/>
+        </eAnnotations>
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="whiteBoxUserBehaviourTemplate"
+        ordered="false" lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//application/WhiteBoxUserBehaviourTemplate"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StartGreyBoxApplication"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StartBlackBoxApplication"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectVmAction" eSuperTypes="#//OptimisationActionStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/VirtualMachine"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/VirtualMachine"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceControlAction" eSuperTypes="#//OptimisationActionStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedVm" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/VirtualMachine"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceShare" ordered="false"
+        lowerBound="1">
+      <eGenericType eClassifier="ecore:EDataType ../../eu.cactosfp7.infrastructuremodels/model/physicaldcmodel.ecore#//util/Amount">
+        <eTypeArguments eClassifier="ecore:EDataType ../../eu.cactosfp7.infrastructuremodels/model/physicaldcmodel.ecore#//util/Dimensionless"/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlledHypervisor" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../eu.cactosfp7.infrastructuremodels/model/logicaldcmodel.ecore#//core/Hypervisor"/>
+  </eClassifiers>
+</ecore:EPackage>

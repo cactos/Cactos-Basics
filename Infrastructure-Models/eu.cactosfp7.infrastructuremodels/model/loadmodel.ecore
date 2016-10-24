@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="load" nsURI="http://www.cactosfp7.eu/CactosLoadModel/1.0" nsPrefix="load">
+  <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <details key="originalName" value="loadmodel"/>
+  </eAnnotations>
+  <eSubpackages name="logical" nsURI="http://www.cactosfp7.eu/CactosLoadModel/Logical/1.0"
+      nsPrefix="logical">
+    <eClassifiers xsi:type="ecore:EClass" name="VirtualMemoryMeasurement" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="utilization" ordered="false"
+          lowerBound="1" eType="#//physical/Utilization" containment="true" eOpposite="#//physical/Utilization/virtualMemoryMeasurement"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logicalLoadModel" ordered="false"
+          eType="#//logical/LogicalLoadModel" eOpposite="#//logical/LogicalLoadModel/virtualMemoryMeasurements"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observedVirtualMemory"
+          ordered="false" lowerBound="1" eType="ecore:EClass logicaldcmodel.ecore#//core/VirtualMemory"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VirtualNetworkInterconnectMeasurement"
+        eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observedVirtualNetworkInterconnect"
+          ordered="false" lowerBound="1" eType="ecore:EClass logicaldcmodel.ecore#//core/VirtualNetworkInterconnect"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logicalLoadModel" ordered="false"
+          eType="#//logical/LogicalLoadModel" eOpposite="#//logical/LogicalLoadModel/virtualNetworkInterconnectMeasurements"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="utilization" ordered="false"
+          lowerBound="1" eType="#//physical/Utilization" containment="true" eOpposite="#//physical/Utilization/virtualNetworkInterconnect"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LogicalLoadModel" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualMemoryMeasurements"
+          ordered="false" upperBound="-1" eType="#//logical/VirtualMemoryMeasurement"
+          containment="true" eOpposite="#//logical/VirtualMemoryMeasurement/logicalLoadModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualProcessingUnitMeasurements"
+          ordered="false" upperBound="-1" eType="#//logical/VirtualProcessingUnitsMeasurement"
+          containment="true" eOpposite="#//logical/VirtualProcessingUnitsMeasurement/logicalLoadModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualDiskMeasurements"
+          ordered="false" upperBound="-1" eType="#//logical/VirtualDiskMeasurement"
+          containment="true" eOpposite="#//logical/VirtualDiskMeasurement/logicalLoadModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requestArrivalRateMeasurement"
+          ordered="false" upperBound="-1" eType="#//logical/RequestArrivalRateMeasurement"
+          containment="true" eOpposite="#//logical/RequestArrivalRateMeasurement/logicalLoadModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="responseArrivalRateMeasurement"
+          ordered="false" upperBound="-1" eType="#//logical/ResponseArrivalRateMeasurement"
+          containment="true" eOpposite="#//logical/ResponseArrivalRateMeasurement/logicalLoadModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualNetworkInterconnectMeasurements"
+          ordered="false" upperBound="-1" eType="#//logical/VirtualNetworkInterconnectMeasurement"
+          containment="true" eOpposite="#//logical/VirtualNetworkInterconnectMeasurement/logicalLoadModel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VirtualProcessingUnitsMeasurement"
+        eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="utilization" ordered="false"
+          lowerBound="1" eType="#//physical/Utilization" containment="true" eOpposite="#//physical/Utilization/virtualProcessingUnitMeasurement"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observedVirtualProcessingUnit"
+          ordered="false" lowerBound="1" eType="ecore:EClass logicaldcmodel.ecore#//core/VirtualProcessingUnit"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logicalLoadModel" ordered="false"
+          eType="#//logical/LogicalLoadModel" eOpposite="#//logical/LogicalLoadModel/virtualProcessingUnitMeasurements"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VirtualDiskMeasurement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="writeThroughput" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/DataRate"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="readThroughput" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/DataRate"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="writeDelay" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Duration"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="readDelay" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Duration"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observedVirtualMachine"
+          ordered="false" lowerBound="1" eType="ecore:EClass logicaldcmodel.ecore#//core/VirtualMachine"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observedVirtualDisk"
+          ordered="false" eType="ecore:EClass logicaldcmodel.ecore#//core/VirtualDisk"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logicalLoadModel" ordered="false"
+          eType="#//logical/LogicalLoadModel" eOpposite="#//logical/LogicalLoadModel/virtualDiskMeasurements"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RequestArrivalRateMeasurement" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observedVmImageConnector"
+          ordered="false" eType="ecore:EClass logicaldcmodel.ecore#//application/VMImageConnector"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observedWhiteBoxApplicationInstance"
+          ordered="false" eType="ecore:EClass logicaldcmodel.ecore#//application/WhiteBoxApplicationInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="arrivalRate" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Frequency"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logicalLoadModel" ordered="false"
+          eType="#//logical/LogicalLoadModel" eOpposite="#//logical/LogicalLoadModel/requestArrivalRateMeasurement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResponseArrivalRateMeasurement" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observedVmImageConnector"
+          ordered="false" eType="ecore:EClass logicaldcmodel.ecore#//application/VMImageConnector"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observedWhiteBoxApplicationInstance"
+          ordered="false" eType="ecore:EClass logicaldcmodel.ecore#//application/WhiteBoxApplicationInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="arrivalRate" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Frequency"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logicalLoadModel" ordered="false"
+          lowerBound="1" eType="#//logical/LogicalLoadModel" eOpposite="#//logical/LogicalLoadModel/responseArrivalRateMeasurement"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="physical" nsURI="http://www.cactosfp7.eu/CactosLoadModel/Physical/1.0"
+      nsPrefix="physical">
+    <eClassifiers xsi:type="ecore:EClass" name="PuMeasurement" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="utilization" ordered="false"
+          lowerBound="1" eType="#//physical/Utilization" containment="true" eOpposite="#//physical/Utilization/puMeasurement"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observedPu" ordered="false"
+          lowerBound="1" eType="ecore:EClass physicaldcmodel.ecore#//core/ProcessingUnitSpecification"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="physicalLoadModel" ordered="false"
+          eType="#//physical/PhysicalLoadModel" eOpposite="#//physical/PhysicalLoadModel/cpuMeasurement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PhysicalLoadModel" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="memoryMeasurements" ordered="false"
+          upperBound="-1" eType="#//physical/MemoryMeasurement" containment="true"
+          eOpposite="#//physical/MemoryMeasurement/physicalLoadModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="storageMeasurement" ordered="false"
+          upperBound="-1" eType="#//physical/StorageMeasurement" containment="true"
+          eOpposite="#//physical/StorageMeasurement/physicalLoadModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="interconnectMeasurement"
+          ordered="false" upperBound="-1" eType="#//physical/InterconnectMeasurement"
+          containment="true" eOpposite="#//physical/InterconnectMeasurement/physicalLoadModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerConsumingEntityMeasurements"
+          ordered="false" upperBound="-1" eType="#//physical/PowerConsumingEntityMeasurement"
+          containment="true" eOpposite="#//physical/PowerConsumingEntityMeasurement/physicalLoadModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cpuMeasurement" ordered="false"
+          upperBound="-1" eType="#//physical/PuMeasurement" containment="true" eOpposite="#//physical/PuMeasurement/physicalLoadModel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MemoryMeasurement" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="utilization" ordered="false"
+          lowerBound="1" eType="#//physical/Utilization" containment="true" eOpposite="#//physical/Utilization/memoryMeasurement"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observedMemory" ordered="false"
+          lowerBound="1" eType="ecore:EClass physicaldcmodel.ecore#//core/MemorySpecification"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="physicalLoadModel" ordered="false"
+          eType="#//physical/PhysicalLoadModel" eOpposite="#//physical/PhysicalLoadModel/memoryMeasurements"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StorageMeasurement" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="storageUtilization" ordered="false"
+          lowerBound="1" eType="#//physical/Utilization" containment="true" eOpposite="#//physical/Utilization/storageMeasurement"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observedStorage" ordered="false"
+          lowerBound="1" eType="ecore:EClass physicaldcmodel.ecore#//core/StorageSpecification"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="readThroughput" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/DataRate"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="writeThroughput" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/DataRate"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="physicalLoadModel" ordered="false"
+          eType="#//physical/PhysicalLoadModel" eOpposite="#//physical/PhysicalLoadModel/storageMeasurement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InterconnectMeasurement" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observedInterconnect"
+          ordered="false" lowerBound="1" eType="ecore:EClass physicaldcmodel.ecore#//core/NetworkInterconnect"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="measuredThroughput" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/DataRate"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="physicalLoadModel" ordered="false"
+          eType="#//physical/PhysicalLoadModel" eOpposite="#//physical/PhysicalLoadModel/interconnectMeasurement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerConsumingEntityMeasurement" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentConsumption" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Power"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerConsumingEntity"
+          ordered="false" lowerBound="1" eType="ecore:EClass physicaldcmodel.ecore#//power/PowerConsumingEntity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerDrawnFrom" ordered="false"
+          upperBound="-1" eType="ecore:EClass physicaldcmodel.ecore#//power/PowerProvidingEntity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="physicalLoadModel" ordered="false"
+          eType="#//physical/PhysicalLoadModel" eOpposite="#//physical/PhysicalLoadModel/powerConsumingEntityMeasurements"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Utilization" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="puMeasurement" ordered="false"
+          eType="#//physical/PuMeasurement" eOpposite="#//physical/PuMeasurement/utilization"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="memoryMeasurement" ordered="false"
+          eType="#//physical/MemoryMeasurement" eOpposite="#//physical/MemoryMeasurement/utilization"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="storageMeasurement" ordered="false"
+          eType="#//physical/StorageMeasurement" eOpposite="#//physical/StorageMeasurement/storageUtilization"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Amount">
+          <eTypeArguments eClassifier="ecore:EDataType physicaldcmodel.ecore#//util/Dimensionless"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualNetworkInterconnect"
+          ordered="false" eType="#//logical/VirtualNetworkInterconnectMeasurement"
+          eOpposite="#//logical/VirtualNetworkInterconnectMeasurement/utilization"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualProcessingUnitMeasurement"
+          ordered="false" eType="#//logical/VirtualProcessingUnitsMeasurement" eOpposite="#//logical/VirtualProcessingUnitsMeasurement/utilization"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualMemoryMeasurement"
+          ordered="false" eType="#//logical/VirtualMemoryMeasurement" eOpposite="#//logical/VirtualMemoryMeasurement/utilization"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

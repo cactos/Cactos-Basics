@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated infrastructuretopology -->
+      <package
+            uri="http://www.cactosfp7.eu/PhysicalDCModel/Core/1.0"
+            class="eu.cactosfp7.infrastructuremodels.physicaldc.core.impl.CorePackageImpl"
+            genModel="model/infrastructuremodels.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated infrastructuretopology -->
+      <parser
+            type="core"
+            class="eu.cactosfp7.infrastructuremodels.physicaldc.core.util.CoreResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated infrastructuretopology -->
+      <package
+            uri="http://www.cactosfp7.eu/PhysicalDCModel/Util/1.0"
+            class="eu.cactosfp7.infrastructuremodels.physicaldc.util.impl.UtilPackageImpl"
+            genModel="model/infrastructuremodels.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated infrastructuremodels -->
+      <parser
+            type="util"
+            class="eu.cactosfp7.infrastructuremodels.physicaldc.util.util.UtilResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated infrastructuremodels -->
+      <package
+            uri="http://www.cactosfp7.eu/PhysicalDCModel/Power/1.0"
+            class="eu.cactosfp7.infrastructuremodels.physicaldc.power.impl.PowerPackageImpl"
+            genModel="model/infrastructuremodels.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated infrastructuremodels -->
+      <parser
+            type="pdcpower"
+            class="eu.cactosfp7.infrastructuremodels.physicaldc.power.util.PowerResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated infrastructuremodels -->
+      <package
+            uri="http://www.cactosfp7.eu/PhysicalDCModel/Power/Binding/1.0"
+            class="eu.cactosfp7.infrastructuremodels.physicaldc.power.binding.impl.BindingPackageImpl"
+            genModel="model/infrastructuremodels.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated infrastructuremodels -->
+      <parser
+            type="pdcbinding"
+            class="eu.cactosfp7.infrastructuremodels.physicaldc.power.binding.util.BindingResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated infrastructuremodels -->
+      <package
+            uri="http://www.cactosfp7.eu/PhysicalDCModel/Power/Specification/1.0"
+            class="eu.cactosfp7.infrastructuremodels.physicaldc.power.specification.impl.SpecificationPackageImpl"
+            genModel="model/infrastructuremodels.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated infrastructuremodels -->
+      <parser
+            type="pdcspec"
+            class="eu.cactosfp7.infrastructuremodels.physicaldc.power.specification.util.SpecificationResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated infrastructuremodels -->
+      <package
+            uri="http://www.cactosfp7.eu/PhysicalDCModel/ArchitectureType/1.0"
+            class="eu.cactosfp7.infrastructuremodels.physicaldc.architecturetype.impl.ArchitecturetypePackageImpl"
+            genModel="model/infrastructuremodels.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated infrastructuretopology -->
+      <package
+            uri="http://www.cactosfp7.eu/PhysicalDCModel/ArchitectureType/1.0"
+            class="eu.cactosfp7.infrastructuremodels.physicaldc.architecturetype.impl.ArchitecturetypePackageImpl"
+            genModel="model/infrastructuremodels.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated infrastructuretopology -->
+      <parser
+            type="architecturetype"
+            class="eu.cactosfp7.infrastructuremodels.physicaldc.architecturetype.util.ArchitecturetypeResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated infrastructuremodels -->
+      <package
+            uri="http://www.cactosfp7.eu/LogicalDCModel/Hypervisor/1.0"
+            class="eu.cactosfp7.infrastructuremodels.logicaldc.hypervisor.impl.HypervisorPackageImpl"
+            genModel="model/infrastructuremodels.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated infrastructuremodels -->
+      <package
+            uri="http://www.cactosfp7.eu/LogicalDCModel/Application/1.0"
+            class="eu.cactosfp7.infrastructuremodels.logicaldc.application.impl.ApplicationPackageImpl"
+            genModel="model/infrastructuremodels.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated infrastructuremodels -->
+      <parser
+            type="application"
+            class="eu.cactosfp7.infrastructuremodels.logicaldc.application.util.ApplicationResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated infrastructuremodels -->
+      <package
+            uri="http://www.cactosfp7.eu/LogicalDCModel/Application/Entity/1.0"
+            class="eu.cactosfp7.infrastructuremodels.logicaldc.application.entity.impl.EntityPackageImpl"
+            genModel="model/infrastructuremodels.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated infrastructuremodels -->
+      <package
+            uri="http://www.cactosfp7.eu/LogicalDCModel/Core/1.0"
+            class="eu.cactosfp7.infrastructuremodels.logicaldc.core.impl.CorePackageImpl"
+            genModel="model/infrastructuremodels.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated infrastructuremodels -->
+      <parser
+            type="logical"
+            class="eu.cactosfp7.infrastructuremodels.logicaldc.core.util.CoreResourceFactoryImpl"/>
+      <parser
+            type="core"
+            class="eu.cactosfp7.infrastructuremodels.logicaldc.core.util.CoreResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated infrastructuretopology -->
+      <package
+            uri="http://www.cactosfp7.eu/LogicalDCModel/Hypervisor/1.0"
+            class="eu.cactosfp7.infrastructuremodels.logicaldc.hypervisor.impl.HypervisorPackageImpl"
+            genModel="model/infrastructuremodels.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated infrastructuretopology -->
+      <parser
+            type="hypervisor"
+            class="eu.cactosfp7.infrastructuremodels.logicaldc.hypervisor.util.HypervisorResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated infrastructuretopology -->
+      <package
+            uri="http://www.cactosfp7.eu/LogicalDCModel/Core/1.0"
+            class="eu.cactosfp7.infrastructuremodels.logicaldc.core.impl.CorePackageImpl"
+            genModel="model/infrastructuremodels.genmodel"/>
+   </extension>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated infrastructuretopology -->
+      <package
+            uri="http://www.cactosfp7.eu/CactosLoadModel/Logical/1.0"
+            class="eu.cactosfp7.infrastructuremodels.load.logical.impl.LogicalPackageImpl"
+            genModel="model/infrastructuremodels.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated infrastructuremodels -->
+      <parser
+            type="logicalload"
+            class="eu.cactosfp7.infrastructuremodels.load.logical.util.LogicalResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated infrastructuretopology -->
+      <package
+            uri="http://www.cactosfp7.eu/CactosLoadModel/Physical/1.0"
+            class="eu.cactosfp7.infrastructuremodels.load.physical.impl.PhysicalPackageImpl"
+            genModel="model/infrastructuremodels.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated infrastructuremodels -->
+      <parser
+            type="physicalload"
+            class="eu.cactosfp7.infrastructuremodels.load.physical.util.PhysicalResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

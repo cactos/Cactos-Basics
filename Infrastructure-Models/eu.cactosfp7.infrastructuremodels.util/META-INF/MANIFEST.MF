@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CACTOS Utility Library
+Bundle-SymbolicName: eu.cactosfp7.infrastructuremodels.util
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: CACTOS Consortium
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: eu.cactosfp7.infrastructuremodels;visibility:=reexport
+Export-Package: eu.cactosfp7.infrastructuremodels.util.modelbuilder.logical

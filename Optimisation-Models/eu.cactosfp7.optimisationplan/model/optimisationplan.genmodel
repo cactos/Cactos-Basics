@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
+    modelDirectory="/eu.cactosfp7.optimisationplan/src" editDirectory="/eu.cactosfp7.optimisationplan.edit/src"
+    editorDirectory="/eu.cactosfp7.optimisationplan.editor/src" modelPluginID="eu.cactosfp7.optimisationplan"
+    modelName="Optimisationplan" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject"
+    rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl" codeFormatting="true"
+    importerID="org.eclipse.uml2.uml.ecore.importer" featureDelegation="Dynamic" complianceLevel="7.0"
+    copyrightFields="false" providerRootExtendsClass="org.eclipse.emf.cdo.edit.CDOItemProviderAdapter"
+    editPluginID="eu.cactosfp7.optimisationplan.edit" editorPluginID="eu.cactosfp7.optimisationplan.editor"
+    usedGenPackages="platform:/plugin/tools.descartes.dlim.generator/src/tools/descartes/dlim/model/dlim.genmodel#//dlim ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../eu.cactosfp7.identifier/model/identifier.genmodel#//identifier ../../eu.cactosfp7.infrastructuremodels/model/infrastructuremodels.genmodel#//physicaldc ../../eu.cactosfp7.infrastructuremodels/model/infrastructuremodels.genmodel#//logicaldc"
+    operationReflection="true" importOrganizing="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="DUPLICATE_FEATURES" value="DISCARD"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="DISCARD"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="DERIVED_FEATURES" value="PROCESS"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="DISCARD"/>
+    <details key="REDEFINING_OPERATIONS" value="REPORT"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="REPORT"/>
+    <details key="DUPLICATE_OPERATIONS" value="DISCARD"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUBSETTING_PROPERTIES" value="REPORT"/>
+    <details key="OPERATION_BODIES" value="PROCESS"/>
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="REDEFINING_PROPERTIES" value="REPORT"/>
+    <details key="INVOCATION_DELEGATES" value="IGNORE"/>
+    <details key="VALIDATION_DELEGATES" value="IGNORE"/>
+    <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
+    <details key="PROPERTY_DEFAULT_EXPRESSIONS" value="IGNORE"/>
+    <details key="NON_API_INVARIANTS" value="IGNORE"/>
+    <details key="UNTYPED_PROPERTIES" value="REPORT"/>
+  </genAnnotations>
+  <foreignModel>dlim.uml</foreignModel>
+  <foreignModel>Ecore.uml</foreignModel>
+  <foreignModel>identifier.uml</foreignModel>
+  <foreignModel>infrastructuretopology.uml</foreignModel>
+  <foreignModel>optimisationplanmodel.uml</foreignModel>
+  <foreignModel>virtualmachinemodel.uml</foreignModel>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="Optimisationplan" basePackage="eu.cactosfp7"
+      resource="XML" disposableProviderFactory="true" ecorePackage="optimisationplan.ecore#/">
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="optimisationplan.ecore#//ExecutionStatus">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="optimisationplan.ecore#//ExecutionStatus/READY"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="optimisationplan.ecore#//ExecutionStatus/IN_EXECUTION"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="optimisationplan.ecore#//ExecutionStatus/COMPLETED_SUCCESSFUL"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="optimisationplan.ecore#//ExecutionStatus/COMPLETED_FAILED"/>
+    </genEnums>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="optimisationplan.ecore#//OptimisationActionStep"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="optimisationplan.ecore#//OptimisationStep">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference optimisationplan.ecore#//OptimisationStep/sequentialSteps"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference optimisationplan.ecore#//OptimisationStep/parallelSteps"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference optimisationplan.ecore#//OptimisationStep/optimisationPlan"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute optimisationplan.ecore#//OptimisationStep/executionStatus"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute optimisationplan.ecore#//OptimisationStep/executionStarted"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute optimisationplan.ecore#//OptimisationStep/executionStopped"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//SequentialSteps">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//SequentialSteps/optimisationSteps"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//ParallelSteps">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//ParallelSteps/optimisationSteps"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//OptimisationPlan">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute optimisationplan.ecore#//OptimisationPlan/executionStatus"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute optimisationplan.ecore#//OptimisationPlan/creationDate"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute optimisationplan.ecore#//OptimisationPlan/executionStarted"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute optimisationplan.ecore#//OptimisationPlan/executionStopped"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference optimisationplan.ecore#//OptimisationPlan/repository"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//OptimisationPlan/optimisationStep"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//OptimisationPlanRepository">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//OptimisationPlanRepository/optimisationPlans"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//VmPlacementAction">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//VmPlacementAction/targetHost"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//VmPlacementAction/vmImage"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//VmPlacementAction/puAffinity"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute optimisationplan.ecore#//VmPlacementAction/proposedMemory"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute optimisationplan.ecore#//VmPlacementAction/proposedStorage"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute optimisationplan.ecore#//VmPlacementAction/proposedVirtualCores"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//VmPlacementAction/unassignedVirtualMachine"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//VmMigrationAction">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//VmMigrationAction/migratedVm"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//VmMigrationAction/targetHost"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//VmMigrationAction/puAffinityAfterMigration"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//VmMigrationAction/sourceHost"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="optimisationplan.ecore#//VerticalScalingAction"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//StopVmAction">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//StopVmAction/stoppedVm"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//LogicalMemoryScalingAction">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute optimisationplan.ecore#//LogicalMemoryScalingAction/proposedSize"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//LogicalMemoryScalingAction/scaledVirtualMemory"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//LogicalStorageScalingAction">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute optimisationplan.ecore#//LogicalStorageScalingAction/proposedLocalSize"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//LogicalStorageScalingAction/vMImageInstance"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//PhysicalFrequencyScalingAction">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//PhysicalFrequencyScalingAction/scaledPhysicalProcessingUnit"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute optimisationplan.ecore#//PhysicalFrequencyScalingAction/proposedFrequency"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//StartVmAction">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//StartVmAction/startedVm"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//SuspendVmAction">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//SuspendVmAction/suspendedVm"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//ManagePhysicalNodeAction">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute optimisationplan.ecore#//ManagePhysicalNodeAction/targetState"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//ManagePhysicalNodeAction/managedNode"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//VirtualCoresScalingAction">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute optimisationplan.ecore#//VirtualCoresScalingAction/proposedNumberOfCores"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//VirtualCoresScalingAction/scaledvirtualPu"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//StartApplication">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//StartApplication/applicationTemplate"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//StopApplication">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//StopApplication/applicationInstance"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//ScaleOut">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//ScaleOut/loadBalancerInstance"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//ScaleOut/scalingConnector"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//ScaleIn">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//ScaleIn/loadBalancerInstance"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//ScaleIn/scaledVM"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//StartWhiteBoxApplication">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//StartWhiteBoxApplication/whiteBoxUserBehaviourTemplate"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="optimisationplan.ecore#//StartWhiteBoxApplication/ApplicationTemplateMustBeWhitBoxApplicationTemplate">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="optimisationplan.ecore#//StartWhiteBoxApplication/ApplicationTemplateMustBeWhitBoxApplicationTemplate/diagnostics"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="optimisationplan.ecore#//StartWhiteBoxApplication/ApplicationTemplateMustBeWhitBoxApplicationTemplate/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//StartGreyBoxApplication"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//StartBlackBoxApplication"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//ConnectVmAction">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//ConnectVmAction/source"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//ConnectVmAction/target"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="optimisationplan.ecore#//ResourceControlAction">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//ResourceControlAction/affectedVm"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute optimisationplan.ecore#//ResourceControlAction/resourceShare"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference optimisationplan.ecore#//ResourceControlAction/controlledHypervisor"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

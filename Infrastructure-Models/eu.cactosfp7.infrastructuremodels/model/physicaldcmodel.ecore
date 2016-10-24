@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="physicaldc" nsURI="http://www.cactosfp7.eu/PhysicalDCModel/1.0"
+    nsPrefix="physicaldc">
+  <eSubpackages name="architecturetype" nsURI="http://www.cactosfp7.eu/PhysicalDCModel/ArchitectureType/1.0"
+      nsPrefix="architecturetype">
+    <eClassifiers xsi:type="ecore:EClass" name="ArchitectureType" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="architectureTypeRepository"
+          ordered="false" eType="#//architecturetype/ArchitectureTypeRepository" eOpposite="#//architecturetype/ArchitectureTypeRepository/architectureTypes"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ArchitectureTypeRepository">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="architectureTypes" ordered="false"
+          upperBound="-1" eType="#//architecturetype/ArchitectureType" containment="true"
+          eOpposite="#//architecturetype/ArchitectureType/architectureTypeRepository"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="util" nsURI="http://www.cactosfp7.eu/PhysicalDCModel/Util/1.0"
+      nsPrefix="util">
+    <eClassifiers xsi:type="ecore:EClass" name="Bandwidth">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="#//util/Amount">
+          <eTypeArguments eClassifier="#//util/DataRate"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="memorySpecificationRead"
+          ordered="false" eType="#//core/MemorySpecification" eOpposite="#//core/MemorySpecification/bandwidthRead"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="networkInterconnect"
+          ordered="false" eType="#//core/NetworkInterconnect" eOpposite="#//core/NetworkInterconnect/bandwidth"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="storageSpecificationRead"
+          ordered="false" eType="#//core/StorageSpecification" eOpposite="#//core/StorageSpecification/readBandwidth"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="storageSpecificationWrite"
+          ordered="false" eType="#//core/StorageSpecification" eOpposite="#//core/StorageSpecification/writeBandwidth"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="memorySpecification"
+          ordered="false" eType="#//core/MemorySpecification" eOpposite="#//core/MemorySpecification/bandwidthWrite"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="Amount" instanceClassName="org.jscience.physics.amount.Amount">
+      <eTypeParameters name="E"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="DataRate" instanceClassName="javax.measure.quantity.DataRate"/>
+    <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="Power" instanceClassName="javax.measure.quantity.Power"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Unit" instanceClassName="javax.measure.unit.Unit">
+      <eTypeParameters name="Q">
+        <eBounds eClassifier="#//util/Quantity"/>
+      </eTypeParameters>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="Quantity" instanceClassName="javax.measure.quantity.Quantity"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="DataAmount" instanceClassName="javax.measure.quantity.DataAmount"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Duration" instanceClassName="javax.measure.quantity.Duration"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Frequency" instanceClassName="javax.measure.quantity.Frequency"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Dimensionless" instanceClassName="javax.measure.quantity.Dimensionless"/>
+    <eClassifiers xsi:type="ecore:EClass" name="EStringToEStringObjectMapEntry" instanceClassName="java.util.Map$Entry">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="Time" instanceClassName="org.jscience.geography.coordinates.Time"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Energy" instanceClassName="javax.measure.quantity.Energy"/>
+  </eSubpackages>
+  <eSubpackages name="power" nsURI="http://www.cactosfp7.eu/PhysicalDCModel/Power/1.0"
+      nsPrefix="power">
+    <eClassifiers xsi:type="ecore:EClass" name="PowerProvidingEntity" abstract="true"
+        eSuperTypes="#//util/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerConsumingEntities"
+          ordered="false" upperBound="-1" eType="#//power/PowerConsumingEntity" eOpposite="#//power/PowerConsumingEntity/powerProvidingEntities"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="suppliablePeakPower"
+          ordered="false">
+        <eGenericType eClassifier="#//util/Amount">
+          <eTypeArguments eClassifier="#//util/Power"/>
+        </eGenericType>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerConsumingEntity" abstract="true"
+        eSuperTypes="#//util/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerProvidingEntities"
+          ordered="false" upperBound="-1" eType="#//power/PowerProvidingEntity" eOpposite="#//power/PowerProvidingEntity/powerConsumingEntities"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerModelBinding" ordered="false"
+          eType="#//power/binding/PowerModelBinding"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="powerCap" ordered="false">
+        <eGenericType eClassifier="#//util/Amount">
+          <eTypeArguments eClassifier="#//util/Power"/>
+        </eGenericType>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eSubpackages name="binding" nsURI="http://www.cactosfp7.eu/PhysicalDCModel/Power/Binding/1.0"
+        nsPrefix="binding">
+      <eClassifiers xsi:type="ecore:EClass" name="FixedFactorValue" eSuperTypes="#//util/NamedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="powerModelBinding"
+            ordered="false" lowerBound="1" eType="#//power/binding/PowerModelBinding"
+            eOpposite="#//power/binding/PowerModelBinding/fixedFactorValues"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="boundFactor" ordered="false"
+            lowerBound="1" eType="#//power/specification/FixedFactor"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+            lowerBound="1">
+          <eGenericType eClassifier="#//util/Amount">
+            <eTypeArguments eClassifier="#//util/Power"/>
+          </eGenericType>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PowerModelBinding" eSuperTypes="#//util/NamedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="powerModel" ordered="false"
+            lowerBound="1" eType="#//power/specification/PowerModel"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="powerModelBindingRepository"
+            ordered="false" lowerBound="1" eType="#//power/binding/PowerModelBindingRepository"
+            eOpposite="#//power/binding/PowerModelBindingRepository/powerModelBindings"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="fixedFactorValues"
+            ordered="false" upperBound="-1" eType="#//power/binding/FixedFactorValue"
+            containment="true" eOpposite="#//power/binding/FixedFactorValue/powerModelBinding"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PowerModelBindingRepository">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="powerModelBindings"
+            ordered="false" upperBound="-1" eType="#//power/binding/PowerModelBinding"
+            containment="true" eOpposite="#//power/binding/PowerModelBinding/powerModelBindingRepository"/>
+      </eClassifiers>
+    </eSubpackages>
+    <eSubpackages name="specification" nsURI="http://www.cactosfp7.eu/PhysicalDCModel/Power/Specification/1.0"
+        nsPrefix="specification">
+      <eClassifiers xsi:type="ecore:EClass" name="PowerModelRepository" eSuperTypes="#//util/NamedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="powerModels" ordered="false"
+            upperBound="-1" eType="#//power/specification/PowerModel" containment="true"
+            eOpposite="#//power/specification/PowerModel/powermodelRepository"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ConsumptionFactor" abstract="true"
+          eSuperTypes="#//util/NamedElement ../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="powerModel" ordered="false"
+            lowerBound="1" eType="#//power/specification/PowerModel" eOpposite="#//power/specification/PowerModel/consumptionFactors"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="FixedFactor" eSuperTypes="#//power/specification/ConsumptionFactor"/>
+      <eClassifiers xsi:type="ecore:EClass" name="MeasuredFactor" eSuperTypes="#//power/specification/ConsumptionFactor">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" ordered="false"
+            lowerBound="1" eType="#//util/Unit"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unitString" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            volatile="true" transient="true" derived="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PowerModel" eSuperTypes="#//util/NamedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="powermodelRepository"
+            ordered="false" lowerBound="1" eType="#//power/specification/PowerModelRepository"
+            eOpposite="#//power/specification/PowerModelRepository/powerModels"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="consumptionFactors"
+            ordered="false" upperBound="-1" eType="#//power/specification/ConsumptionFactor"
+            containment="true" eOpposite="#//power/specification/ConsumptionFactor/powerModel"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" ordered="false"
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="core" nsURI="http://www.cactosfp7.eu/PhysicalDCModel/Core/1.0"
+      nsPrefix="core">
+    <eClassifiers xsi:type="ecore:EClass" name="MemorySpecification" eSuperTypes="#//power/PowerConsumingEntity #//core/MonitorableResource">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="#//util/Amount">
+          <eTypeArguments eClassifier="#//util/DataAmount"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="node" ordered="false"
+          eType="#//core/AbstractNode" eOpposite="#//core/AbstractNode/memorySpecifications"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bandwidthWrite" ordered="false"
+          eType="#//util/Bandwidth" containment="true" eOpposite="#//util/Bandwidth/memorySpecification"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bandwidthRead" ordered="false"
+          eType="#//util/Bandwidth" containment="true" eOpposite="#//util/Bandwidth/memorySpecificationRead"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MonitorableResource" abstract="true"
+        eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractNode" abstract="true" eSuperTypes="#//power/PowerConsumingEntity #//power/PowerProvidingEntity #//core/ConnectedEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rack" ordered="false"
+          eType="#//core/Rack" eOpposite="#//core/Rack/nodes"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cpuSpecifications" ordered="false"
+          upperBound="-1" eType="#//core/ProcessingUnitSpecification" containment="true"
+          eOpposite="#//core/ProcessingUnitSpecification/node"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="storageSpecifications"
+          ordered="false" upperBound="-1" eType="#//core/StorageSpecification" containment="true"
+          eOpposite="#//core/StorageSpecification/node"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" ordered="false"
+          lowerBound="1" eType="#//core/NodeState" defaultValueLiteral="RUNNING"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="memorySpecifications"
+          ordered="false" upperBound="-1" eType="#//core/MemorySpecification" containment="true"
+          eOpposite="#//core/MemorySpecification/node"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConnectedEntity" abstract="true" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="networkInterconnects"
+          ordered="false" upperBound="-1" eType="#//core/NetworkInterconnect" eOpposite="#//core/NetworkInterconnect/connectedEntities"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NetworkInterconnect" eSuperTypes="#//util/NamedElement #//core/MonitorableResource">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bandwidth" ordered="false"
+          lowerBound="1" eType="#//util/Bandwidth" containment="true" eOpposite="#//util/Bandwidth/networkInterconnect"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="physicalDCModel" ordered="false"
+          eType="#//core/PhysicalDCModel" eOpposite="#//core/PhysicalDCModel/networkInterconnects"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectedEntities" ordered="false"
+          lowerBound="2" upperBound="-1" eType="#//core/ConnectedEntity" eOpposite="#//core/ConnectedEntity/networkInterconnects"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PhysicalDCModel" eSuperTypes="../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="switches" ordered="false"
+          upperBound="-1" eType="#//core/Switch" containment="true" eOpposite="#//core/Switch/physicalDCModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="racks" ordered="false"
+          upperBound="-1" eType="#//core/Rack" containment="true" eOpposite="#//core/Rack/physicalDCModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerSupplies" ordered="false"
+          upperBound="-1" eType="#//core/PowerDistributionUnit" containment="true"
+          eOpposite="#//core/PowerDistributionUnit/physicalDCModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="clusters" ordered="false"
+          upperBound="-1" eType="#//core/Cluster" containment="true" eOpposite="#//core/Cluster/physicalDCModel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="networkInterconnects"
+          ordered="false" upperBound="-1" eType="#//core/NetworkInterconnect" containment="true"
+          eOpposite="#//core/NetworkInterconnect/physicalDCModel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Switch" eSuperTypes="#//power/PowerConsumingEntity #//core/ConnectedEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="physicalDCModel" ordered="false"
+          eType="#//core/PhysicalDCModel" eOpposite="#//core/PhysicalDCModel/switches"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Rack" eSuperTypes="#//core/ConnectedEntity #//util/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" ordered="false"
+          lowerBound="1" upperBound="-1" eType="#//core/AbstractNode" containment="true"
+          eOpposite="#//core/AbstractNode/rack"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerSupplies" ordered="false"
+          upperBound="-1" eType="#//core/PowerDistributionUnit" eOpposite="#//core/PowerDistributionUnit/hostedIn"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="physicalDCModel" ordered="false"
+          eType="#//core/PhysicalDCModel" eOpposite="#//core/PhysicalDCModel/racks"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerDistributionUnit" eSuperTypes="#//power/PowerConsumingEntity #//power/PowerProvidingEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="physicalDCModel" ordered="false"
+          eType="#//core/PhysicalDCModel" eOpposite="#//core/PhysicalDCModel/powerSupplies"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hostedIn" ordered="false"
+          eType="#//core/Rack" eOpposite="#//core/Rack/powerSupplies"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="#//util/NamedElement ../../eu.cactosfp7.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="clusterId" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="containedNodes" ordered="false"
+          lowerBound="1" upperBound="-1" eType="#//core/AbstractNode"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="physicalDCModel" ordered="false"
+          eType="#//core/PhysicalDCModel" eOpposite="#//core/PhysicalDCModel/clusters"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StorageSpecification" eSuperTypes="#//power/PowerConsumingEntity #//core/MonitorableResource">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="#//util/Amount">
+          <eTypeArguments eClassifier="#//util/DataAmount"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="readDelay" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="#//util/Amount">
+          <eTypeArguments eClassifier="#//util/Duration"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="writeDelay" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="#//util/Amount">
+          <eTypeArguments eClassifier="#//util/Duration"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="readBandwidth" ordered="false"
+          lowerBound="1" eType="#//util/Bandwidth" containment="true" eOpposite="#//util/Bandwidth/storageSpecificationRead"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="writeBandwidth" ordered="false"
+          lowerBound="1" eType="#//util/Bandwidth" containment="true" eOpposite="#//util/Bandwidth/storageSpecificationWrite"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="node" ordered="false"
+          eType="#//core/AbstractNode" eOpposite="#//core/AbstractNode/storageSpecifications"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="NodeState">
+      <eLiterals name="OFF"/>
+      <eLiterals name="RUNNING" value="1"/>
+      <eLiterals name="FAILURE" value="2"/>
+      <eLiterals name="UNKNOWN" value="3"/>
+      <eLiterals name="MAINTENANCE" value="4"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NetworkAttachedStorage" eSuperTypes="#//core/AbstractNode">
+      <eOperations name="NetworkAttachedStorageMustHaveAtLeastOneStorageSpecification"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="storageSpecifications->size() > 0"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComputeNode" eSuperTypes="#//core/AbstractNode">
+      <eOperations name="ComputeNodesMustHaveAtLeastOneProcessingUnit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="cpuSpecifications->size() > 0"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eOperations name="ComputeNodesMustHaveAtLeastOneMemorySpecification" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+          <details key="body" value="memorySpecifications->size() > 0"/>
+        </eAnnotations>
+        <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The chain of diagnostics to which problems are to be appended."/>
+          </eAnnotations>
+        </eParameters>
+        <eParameters name="context">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The cache of context-specific information."/>
+          </eAnnotations>
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hypervisor" ordered="false"
+          eType="ecore:EClass logicaldcmodel.ecore#//core/Hypervisor" eOpposite="logicaldcmodel.ecore#//core/Hypervisor/node"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProcessingUnitSpecification" eSuperTypes="#//power/PowerConsumingEntity #//core/MonitorableResource">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="node" ordered="false"
+          eType="#//core/AbstractNode" eOpposite="#//core/AbstractNode/cpuSpecifications"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="puId" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="frequency" ordered="false"
+          lowerBound="1">
+        <eGenericType eClassifier="#//util/Amount">
+          <eTypeArguments eClassifier="#//util/Frequency"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="architectureType" ordered="false"
+          lowerBound="1" eType="#//architecturetype/ArchitectureType"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfCores" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="1"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="supportsTurboMode" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+          defaultValueLiteral="true"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
