@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" activate="activate" name="eu.cactosfp7.ossession">
+   <implementation class="eu.cactosfp7.ossession.OsSessionServiceImpl"/>
+   <property name="service.pid" type="String" value="integration_ossession"/>
+   <service>
+      <provide interface="org.osgi.service.cm.ManagedService"/>
+      <provide interface="eu.cactosfp7.ossession.service.OsSessionService"/>
+   </service>
+</scr:component>
